@@ -1,0 +1,390 @@
+/* ============================================================
+   STS — Stefan Schindele
+   Colors & Type Foundation
+   ------------------------------------------------------------
+   Two equal modes: Dark (default) and Light. Switch via
+   `data-theme="light"` (or `dark`) on <html>.
+   ============================================================ */
+
+/* -------- Fonts -------- */
+@font-face {
+  font-family: "TT Norms";
+  src: url("./fonts/TTNorms-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TT Norms";
+  src: url("./fonts/TTNorms-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TT Norms";
+  src: url("./fonts/TTNorms-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TT Norms";
+  src: url("./fonts/TTNorms-ExtraBold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TT Norms";
+  src: url("./fonts/TTNorms-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TT Norms";
+  src: url("./fonts/TTNorms-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Cordier — Handschrift, reserviert für Logo, "strategy" im Kern und die
+   Format-Namen. Selbst gehostet, kein externer Font-Dienst. */
+@font-face {
+  font-family: "Cordier";
+  src: url("./fonts/CordierScript-Linked.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================================
+   COLOR TOKENS
+   ============================================================ */
+
+:root {
+  /* --- Brand primaries (mode-independent) --- */
+  --scarlet:        #F5332C;
+  --scarlet-700:    #C8231D;     /* hover / pressed */
+  --scarlet-300:    #FFA29D;     /* tints, focus glow */
+  --scarlet-100:    #FCE6E4;     /* light wash */
+
+  --black:          #000000;
+  --creme:          #CCC8B9;
+
+  /* --- Dark world neutrals --- */
+  --dk-bg:          #000000;     /* page */
+  --dk-surface:     #0E0E0D;     /* cards, raised */
+  --dk-surface-2:   #1A1A18;     /* dialog, deeper raise */
+  --dk-anthracite:  #2A2A26;     /* hairlines, dividers in dark */
+  --dk-mid:         #5A5A53;     /* disabled text, ghost UI */
+  --dk-light:       #8A8780;     /* secondary text */
+  --dk-text:        #CCC8B9;     /* primary text = creme */
+
+  /* --- Light world neutrals --- */
+  --lt-bg:          #E6E2D5;     /* page — slightly warmer than creme */
+  --lt-surface:     #CCC8B9;     /* card / second layer = creme */
+  --lt-surface-2:   #B8B3A2;     /* deeper, used for callouts */
+  --lt-warm-grey:   #807C70;     /* secondary text */
+  --lt-anthracite:  #2B2A26;     /* near-black for body text in light */
+  --lt-text:        #000000;     /* primary text = black */
+
+  /* --- Functional palette (muted, brand-aligned, not Bootstrap) --- */
+  --success:        #5C7C5A;     /* moss */
+  --success-soft:   #1F2B1E;
+  --warning:        #C49A3F;     /* amber-ochre */
+  --warning-soft:   #2A2418;
+  --error:          #F5332C;     /* same as scarlet */
+  --error-soft:     #2C0F0E;
+  --info:           #6F8A9B;     /* slate-blue */
+  --info-soft:      #18222A;
+
+  /* --- Spacing (8px base) --- */
+  --space-xs:   4px;
+  --space-s:    8px;
+  --space-m:   16px;
+  --space-l:   24px;
+  --space-xl:  32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+  --space-5xl: 128px;
+
+  /* --- Radii (used very sparingly — STS is a square-cornered system) --- */
+  --radius-0:  0px;            /* default */
+  --radius-1:  2px;            /* form inputs, focus */
+  --radius-2:  4px;            /* tags / pill chips only */
+  --radius-pill: 999px;        /* status dots */
+
+  /* --- Hairlines / strokes --- */
+  --stroke-1: 1px;
+  --stroke-2: 2px;
+  --stroke-rule: 1px;          /* editorial divider */
+
+  /* --- Motion --- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:  cubic-bezier(0.7, 0, 0.84, 0);
+  --dur-micro:    160ms;
+  --dur-standard: 320ms;
+  --dur-layout:   600ms;
+
+  /* --- Type stack --- */
+  --font-sans:    "TT Norms", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --font-display: "Cordier", "TT Norms", sans-serif;
+  --font-mono:    ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* --- Fluid type scale (responsive via clamp) --- */
+  --fs-manifest:  clamp(48px, 9vw, 160px);   /* Cordier hero statements */
+  --fs-display:   clamp(40px, 6vw, 96px);    /* Big editorial moments */
+  --fs-h1:        clamp(32px, 4.4vw, 64px);
+  --fs-h2:        clamp(26px, 3.2vw, 44px);
+  --fs-h3:        clamp(20px, 2.2vw, 28px);
+  --fs-subhead:   14px;
+  --fs-body:      17px;
+  --fs-body-s:    15px;
+  --fs-caption:   13px;
+  --fs-micro:     11px;
+
+  /* --- Line heights --- */
+  --lh-tight:    1.02;
+  --lh-display:  1.08;
+  --lh-heading:  1.12;
+  --lh-body:     1.55;
+  --lh-caption:  1.4;
+
+  /* --- Letter spacing (in em) --- */
+  --tr-manifest:    0.02em;
+  --tr-headline:    0.10em;   /* TT Norms versal headlines */
+  --tr-headline-w:  0.14em;   /* extra-airy variant */
+  --tr-subhead:     0.16em;
+  --tr-caption:     0.05em;
+  --tr-body:        0;
+
+  /* --- Layout --- */
+  --container-max: 1280px;
+  --container-wide: 1440px;
+  --gutter:        24px;
+}
+
+/* ============================================================
+   THEME — DARK (default)
+   ============================================================ */
+:root,
+[data-theme="dark"] {
+  --bg:           var(--dk-bg);
+  --bg-2:         var(--dk-surface);
+  --bg-3:         var(--dk-surface-2);
+  --fg:           var(--dk-text);
+  --fg-2:         var(--dk-light);
+  --fg-3:         var(--dk-mid);
+  --rule:         var(--dk-anthracite);
+  --rule-strong:  #3A3A35;
+  --accent:       var(--scarlet);
+  --accent-fg:    #FFFFFF;       /* text on scarlet */
+  --on-accent:    var(--black);  /* alt for tonal backgrounds */
+  --link:         var(--dk-text);
+  --link-accent:  var(--scarlet);
+  --focus-ring:   var(--scarlet);
+  --selection-bg: var(--scarlet);
+  --selection-fg: #FFFFFF;
+  --shadow-soft:  0 2px 0 rgba(255,255,255,0.02);
+  --shadow-card:  0 1px 0 rgba(255,255,255,0.04), 0 24px 48px -24px rgba(0,0,0,0.6);
+  color-scheme: dark;
+}
+
+/* ============================================================
+   THEME — LIGHT
+   ============================================================ */
+[data-theme="light"] {
+  --bg:           var(--lt-bg);
+  --bg-2:         var(--lt-surface);
+  --bg-3:         var(--lt-surface-2);
+  --fg:           var(--lt-text);
+  --fg-2:         var(--lt-anthracite);
+  --fg-3:         var(--lt-warm-grey);
+  --rule:         #B8B3A2;
+  --rule-strong:  #807C70;
+  --accent:       var(--scarlet);
+  --accent-fg:    #FFFFFF;
+  --on-accent:    var(--black);
+  --link:         var(--black);
+  --link-accent:  var(--scarlet);
+  --focus-ring:   var(--scarlet);
+  --selection-bg: var(--scarlet);
+  --selection-fg: #FFFFFF;
+  --shadow-soft:  0 1px 0 rgba(0,0,0,0.04);
+  --shadow-card:  0 1px 0 rgba(0,0,0,0.05), 0 16px 40px -28px rgba(0,0,0,0.25);
+  color-scheme: light;
+}
+
+/* ============================================================
+   GLOBAL — base resets and editorial defaults
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01", "kern";
+  transition:
+    background-color var(--dur-standard) var(--ease-out),
+    color var(--dur-standard) var(--ease-out);
+}
+::selection { background: var(--selection-bg); color: var(--selection-fg); }
+
+/* ============================================================
+   TYPE — semantic
+   ============================================================ */
+
+.manifest, .ds-manifest {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--fs-manifest);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tr-manifest);
+  text-transform: lowercase;
+  text-wrap: balance;
+}
+
+.display, .ds-display {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tr-headline);
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+h1, .h1 {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-h1);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tr-headline);
+  text-transform: uppercase;
+  margin: 0 0 var(--space-l);
+  text-wrap: balance;
+}
+
+h2, .h2 {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tr-headline);
+  text-transform: uppercase;
+  margin: 0 0 var(--space-m);
+  text-wrap: balance;
+}
+
+h3, .h3 {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-heading);
+  letter-spacing: 0.02em;
+  margin: 0 0 var(--space-s);
+}
+
+.subhead, .ds-subhead {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--fs-subhead);
+  line-height: var(--lh-caption);
+  letter-spacing: var(--tr-subhead);
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 var(--space-s);
+}
+
+p, .body {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  letter-spacing: var(--tr-body);
+  margin: 0 0 var(--space-m);
+  color: var(--fg);
+  text-wrap: pretty;
+}
+
+.body-s { font-size: var(--fs-body-s); }
+
+.caption, small {
+  font-size: var(--fs-caption);
+  line-height: var(--lh-caption);
+  letter-spacing: var(--tr-caption);
+  color: var(--fg-2);
+}
+
+.micro {
+  font-size: var(--fs-micro);
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+
+.emphasized { font-weight: 500; }
+.strong     { font-weight: 800; }
+
+/* Scarlet inline accent */
+.accent     { color: var(--accent); }
+
+/* Editorial pull-quote */
+.pullquote {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-h2);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  border-left: 2px solid var(--accent);
+  padding-left: var(--space-l);
+  margin: var(--space-2xl) 0;
+  text-wrap: balance;
+}
+
+/* Links — subtle scarlet underline that grows */
+a {
+  color: inherit;
+  text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  transition: background-size var(--dur-standard) var(--ease-out);
+  padding-bottom: 2px;
+}
+a:hover, a:focus-visible {
+  background-size: 100% 1px;
+}
+
+/* Focus — sharp scarlet outline (no glow) */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Editorial horizontal rule */
+hr, .rule {
+  border: 0;
+  border-top: var(--stroke-rule) solid var(--rule);
+  margin: var(--space-2xl) 0;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

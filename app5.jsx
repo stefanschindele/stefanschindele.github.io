@@ -168,7 +168,7 @@ function Hero({ copy, subKey }) {
   const h = copy.hero;
   return (
     <section className="hero" id="top" data-screen-label="Hero">
-      <img src="assets/logo-medium.png" alt="sts" className="sts-logo" draggable="false" />
+      <img src="assets/logo-medium.svg" alt="sts" className="sts-logo" draggable="false" />
       <div className="sts-name">{h.name}</div>
       <h1 className="hero-motto">{h.motto[0]}{h.motto[1]}<span className="dot">{h.motto[2]}</span></h1>
       <p className="hero-sub">{h.sub[subKey] || h.sub.klarheit}</p>
@@ -294,7 +294,7 @@ function Closing() {
   return (
     <section className="closing" aria-hidden="true">
       <div className="closing-inner">
-        <img src="assets/logo-extrawide.png" alt="sts" className="closing-sts" loading="lazy" draggable="false" />
+        <img src="assets/logo-extrawide.svg" alt="sts" className="closing-sts" loading="lazy" draggable="false" />
       </div>
     </section>
   );

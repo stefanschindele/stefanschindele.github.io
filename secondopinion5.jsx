@@ -21,10 +21,6 @@ function SecondOpinionSection({ lang }) {
   return (
     <section className="section section-secondopinion" id="secondopinion" data-screen-label="Second Opinion">
       <div className="prose">
-        <div className="section-label">
-          <span className="rule"></span><span className="label-text">{d.label}</span><span className="rule"></span>
-        </div>
-        <h2 className="section-title">{d.title}</h2>
         <span className="so-script"><Wordmark name="secondopinion" label="second opinion" /></span>
         <p className="section-lede">{d.line}</p>
         <p className="so-p">{d.p}</p>

@@ -667,7 +667,7 @@ body.scroll-locked { overflow: hidden; }
 }
 
 /* Hero: sts deutlich größer */
-.hero .sts-logo { width: min(520px, 72vw) !important; max-width: none !important; height: auto !important; }
+.hero .sts-logo { width: min(520px, 72vw) !important; max-width: none !important; height: auto !important; aspect-ratio: 1920 / 1080; background-color: var(--accent); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; -webkit-mask-size: contain; mask-size: contain; }
 
 /* Layout beruhigen: Label ohne Doppel-Linien, mehr Luft */
 .section { padding-top: clamp(120px, 16vh, 200px); }
@@ -693,14 +693,14 @@ body.scroll-locked { overflow: hidden; }
 .core-practice p { font-size: clamp(16px, 1.6vw, 20px); line-height: 1.6; color: var(--fg-2); margin: 0; text-wrap: balance; }
 
 /* Formate: Skript-Namen, Interim als leise vierte Zeile */
-.format .f-script { display: block; height: 52px; }
+.format .f-script { display: block; height: clamp(72px, 7vw, 96px); }
 .format .wm {
-  height: 52px; width: 100%;
+  height: clamp(72px, 7vw, 96px); width: 100%;
   -webkit-mask-position: left center; mask-position: left center;
   -webkit-mask-size: contain; mask-size: contain;
   -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
 }
-.format .wm-fallback { font-size: 44px; line-height: 52px; text-align: left; height: 52px; }
+.format .wm-fallback { font-size: clamp(60px, 6vw, 82px); line-height: clamp(72px, 7vw, 96px); text-align: left; height: clamp(72px, 7vw, 96px); }
 .format .f-name {
   font-family: "TT Norms", sans-serif; font-weight: 400; text-transform: uppercase;
   letter-spacing: 0.08em; font-size: 13px; color: var(--fg-3);
@@ -773,7 +773,7 @@ body.scroll-locked { overflow: hidden; }
 /* Abschluss: sts über volle Breite, Madonna klein darunter */
 .closing { padding: clamp(100px, 16vh, 180px) 0 clamp(60px, 8vh, 100px); overflow: hidden; }
 .closing-inner { display: flex; flex-direction: column; align-items: center; gap: clamp(48px, 7vh, 88px); }
-.closing-sts { width: 100vw; max-width: none; height: auto; display: block; user-select: none; }
+.closing-sts { width: min(680px, 88vw); max-width: none; aspect-ratio: 1920 / 1080; height: auto; display: block; user-select: none; background-color: var(--accent); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; -webkit-mask-size: contain; mask-size: contain; }
 .closing-sig { display: none; }
 
 /* Footer: Legal-Links */

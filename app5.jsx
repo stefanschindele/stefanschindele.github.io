@@ -294,7 +294,7 @@ function Closing() {
   return (
     <section className="closing" aria-hidden="true">
       <div className="closing-inner">
-        <img src="assets/logo-extrawide.svg" alt="sts" className="closing-sts" loading="lazy" draggable="false" />
+        <img src="assets/logo-medium.svg" alt="sts" className="closing-sts" loading="lazy" draggable="false" />
       </div>
     </section>
   );

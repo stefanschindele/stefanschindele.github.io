@@ -759,7 +759,7 @@ body.scroll-locked { overflow: hidden; }
 
 /* Netzwerk v5: Dauer als Argument — "seit JAHR" in Scarlet */
 .partner .p-row { grid-template-columns: 130px 1fr; gap: var(--space-l); padding: 34px 0; align-items: start; }
-.p-since { font-family: "TT Norms", sans-serif; font-weight: 300; font-size: clamp(20px, 2vw, 26px); color: var(--accent); line-height: 1.2; white-space: nowrap; }
+.p-since { font-family: "TT Norms", sans-serif; font-weight: 500; font-size: clamp(19px, 2vw, 25px); letter-spacing: 0.05em; color: var(--accent); line-height: 1.2; white-space: nowrap; }
 .p-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
 .p-name { font-size: clamp(19px, 2vw, 25px); letter-spacing: 0.05em; }
 .p-field { font-size: 11px; letter-spacing: 0.22em; }
@@ -889,7 +889,7 @@ body.scroll-locked { overflow: hidden; }
   margin: clamp(20px, 3vh, 32px) auto 0; padding: 0 var(--space-l);
 }
 .section-secondopinion .so-script .wm,
-.section-secondopinion .so-script .wm-fallback { height: clamp(50px, 6vw, 84px); width: min(440px, 100%); }
+.section-secondopinion .so-script .wm-fallback { height: clamp(72px, 8vw, 120px); width: min(560px, 100%); }
 .section-secondopinion .so-script .wm { -webkit-mask-position: center; mask-position: center; }
 .section-secondopinion .so-script .wm-fallback { font-size: clamp(40px, 5vw, 64px); text-align: center; }
 .section-secondopinion .so-p {

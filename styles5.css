@@ -667,7 +667,7 @@ body.scroll-locked { overflow: hidden; }
 }
 
 /* Hero: sts deutlich größer */
-.hero .sts-logo { width: min(520px, 72vw) !important; max-width: none !important; height: auto !important; aspect-ratio: 1920 / 1080; background-color: var(--accent); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; -webkit-mask-size: contain; mask-size: contain; }
+.hero .sts-logo { display: block; margin: 0 auto; width: min(520px, 72vw) !important; max-width: none !important; height: min(293px, 40.5vw) !important; background-color: var(--accent) !important; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; -webkit-mask-size: contain; mask-size: contain; }
 
 /* Layout beruhigen: Label ohne Doppel-Linien, mehr Luft */
 .section { padding-top: clamp(120px, 16vh, 200px); }
@@ -773,7 +773,7 @@ body.scroll-locked { overflow: hidden; }
 /* Abschluss: sts über volle Breite, Madonna klein darunter */
 .closing { padding: clamp(100px, 16vh, 180px) 0 clamp(60px, 8vh, 100px); overflow: hidden; }
 .closing-inner { display: flex; flex-direction: column; align-items: center; gap: clamp(48px, 7vh, 88px); }
-.closing-sts { width: min(680px, 88vw); max-width: none; aspect-ratio: 1920 / 1080; height: auto; display: block; user-select: none; background-color: var(--accent); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; -webkit-mask-size: contain; mask-size: contain; }
+.closing-sts { width: min(680px, 88vw); max-width: none; height: min(383px, 49.5vw); display: block; user-select: none; background-color: var(--accent); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; -webkit-mask-size: contain; mask-size: contain; }
 .closing-sig { display: none; }
 
 /* Footer: Legal-Links */

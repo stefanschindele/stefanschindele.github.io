@@ -7,7 +7,7 @@ const MAIL = "office@stefan-schindele.com";
 // ─────────────────────────────────────────────────────────────────
 // State: lang, lokal im Browser gespeichert (kein Tracking). Theme fix Light.
 // ─────────────────────────────────────────────────────────────────
-const DEFAULTS = { lang: "de", accent: "#F5332C", subline: "klarheit" };
+const DEFAULTS = { lang: "de", accent: "#F5332C", subline: "kern" };
 function useTweaks(defaults) {
   const read = (k, d) => { try { return window.localStorage.getItem("sts-" + k) || d; } catch (e) { return d; } };
   const [values, setValues] = useState(() => ({
@@ -62,14 +62,23 @@ const COPY = {
       sub: {
         klarheit: "Klarheit in Marke und Kommunikation.",
         strategie: "Strategie für Marke und Kommunikation.",
+        kern: "Die Strategie gibt es meistens schon. Ausgesprochen ist sie selten.",
       },
       mailPrompt: "Lieber gleich persönlich?",
-      cue: "Kern · Formate · Netzwerk · Kontakt",
+      cue: [
+        { label: "Kern", href: "#core" },
+        { label: "Formate", href: "#formats" },
+        { label: "Second Opinion", href: "#secondopinion" },
+        { label: "Sichtbar", href: "#sichtbar" },
+        { label: "Netzwerk", href: "#network" },
+        { label: "Über mich", href: "#about" },
+        { label: "Kontakt", href: "#contact" },
+      ],
     },
     contact: {
       label: "Kontakt",
       title: "kontakt",
-      lede: "Wien-basiert. Verfügbar für Projekte in DACH und CEE.",
+      lede: "Wien und München. Und dort, wo man mich braucht. Verfügbar für Projekte in DACH und CEE.",
       mailButton: "Schreiben Sie mir",
       form: {
         kicker: "Oder direkt hier",
@@ -99,14 +108,23 @@ const COPY = {
       sub: {
         klarheit: "Clarity in brand and communication.",
         strategie: "Strategy for brand and communication.",
+        kern: "The strategy usually already exists. It is rarely spoken.",
       },
       mailPrompt: "Prefer to go straight to a conversation?",
-      cue: "Core · Formats · Network · Contact",
+      cue: [
+        { label: "Core", href: "#core" },
+        { label: "Formats", href: "#formats" },
+        { label: "Second Opinion", href: "#secondopinion" },
+        { label: "Proof", href: "#sichtbar" },
+        { label: "Network", href: "#network" },
+        { label: "About", href: "#about" },
+        { label: "Contact", href: "#contact" },
+      ],
     },
     contact: {
       label: "Get in touch",
       title: "contact",
-      lede: "Based in Vienna. Available for projects across DACH and CEE.",
+      lede: "Vienna and Munich. And wherever I'm needed. Available for projects across DACH and CEE.",
       mailButton: "Write to me",
       form: {
         kicker: "Or right here",
@@ -170,7 +188,14 @@ function Hero({ copy, subKey }) {
       <p className="hero-sub">{h.sub[subKey] || h.sub.klarheit}</p>
       <p className="hero-mail">{h.mailPrompt} <a href={"mailto:" + MAIL}>{MAIL}<span className="arrow">→</span></a></p>
       <div className="scroll-cue">
-        <span>{h.cue}</span>
+        <span className="cue-nav">
+          {h.cue.map((c, i) => (
+            <React.Fragment key={c.href}>
+              {i > 0 ? <span className="cue-sep"> · </span> : null}
+              <a href={c.href} style={{ color: "inherit", textDecoration: "none" }}>{c.label}</a>
+            </React.Fragment>
+          ))}
+        </span>
         <span className="line"></span>
       </div>
     </section>
@@ -336,6 +361,7 @@ function App() {
         <CoreSection lang={lang} />
         <FormatsSection lang={lang} />
         <SecondOpinionSection lang={lang} />
+        <ProofSection lang={lang} />
         <NetworkSection lang={lang} />
         <About lang={lang} />
         <Contact copy={copy} />

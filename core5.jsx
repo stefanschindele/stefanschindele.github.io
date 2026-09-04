@@ -8,7 +8,7 @@ const CORE5 = {
     note: "Keine Repositionierung. Verdichtung und Übersetzung der Strategie, die in einer Organisation oft schon existiert – nur unausgesprochen.",
     philosophy: <>Schwächen kennen. Stärken erkennen. <span className="accent">Dann strategisch darauf aufbauen.</span></>,
     origin: "Analytisch in der Sache, kreativ im Weg dorthin – Verdichtung braucht beides: das Zerlegen und das überraschende Neu-Zusammensetzen.",
-    practice: "Zwanzig Jahre Praxis in Marke und Kommunikation – im Konzern, über sieben Märkte, bis in die Umsetzung. Geblieben ist eine einfache Gewissheit: Strategie zählt erst, wenn sie sichtbar wird.",
+    practice: "Zwanzig Jahre Praxis in Marke und Kommunikation – im Konzern, über sieben Märkte, bis in die Umsetzung.",
   },
   en: {
     label: "The core",
@@ -18,7 +18,7 @@ const CORE5 = {
     note: "No repositioning. A distillation and translation of the strategy that often already exists inside an organisation – just unspoken.",
     philosophy: <>Know the weaknesses. Recognise the strengths. <span className="accent">Then build on them strategically.</span></>,
     origin: "Analytical in substance, creative in the route – condensing takes both: taking apart, and reassembling in ways not expected.",
-    practice: "Twenty years of practice in brand and communication – inside a corporation, across seven markets, through to execution. What remains is a simple certainty: strategy only counts once it becomes visible.",
+    practice: "Twenty years of practice in brand and communication – inside a corporation, across seven markets, through to execution.",
   },
 };
 

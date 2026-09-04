@@ -13,7 +13,7 @@ const ABOUT5 = {
       { years: "2016 – 2025", role: "Domain Lead Brand Strategy, Brand Management & Marketing Communications", org: "A1 Telekom Austria Group" },
       { years: "2014 – 2016", role: "Director Brand & Marketing Communication", org: "Vipnet (Kroatien & Nordmazedonien)" },
       { years: "2009 – 2014", role: "Client Service Director & Strategic Planner", org: "Saffron Brand Consultants" },
-      { years: "2006 – 2009", role: "Account Director, Board Mitglied", org: "Demner, Merlicek & Bergmann" },
+      { years: "2006 – 2009", role: "Account Director, Vorstand", org: "Demner, Merlicek & Bergmann" },
       { years: "2003 – 2006", role: "Head of Marketing Communication", org: "Hutchison 3G Austria (3/Drei)" },
     ],
   },
@@ -43,6 +43,7 @@ function About({ lang }) {
         <div className="section-label">
           <span className="rule"></span><span className="label-text">{d.label}</span><span className="rule"></span>
         </div>
+        <img className="about-portrait" src="assets/about-portrait.jpg" alt="Stefan Schindele" />
         <h2 className="section-title">{d.title}</h2>
         <p className="about-role">{d.role}</p>
         <p className="about-bio">{d.origin}</p>

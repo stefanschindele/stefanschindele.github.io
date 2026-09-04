@@ -57,23 +57,17 @@ function SecondOpinionSection({ lang }) {
         <p className="so-p">{d.intro1}</p>
         <p className="so-p">{d.intro2}</p>
 
-        <div className="section-label">
-          <span className="rule"></span><span className="label-text">{d.formsLabel}</span><span className="rule"></span>
-        </div>
+        <p className="so-divider">{d.formsLabel}</p>
         {d.forms.map((f, i) => (
-          <p className="so-p" key={i}><strong>{f.name}.</strong> {f.p}</p>
+          <p className="so-form" key={i}><strong>{f.name}.</strong> {f.p}</p>
         ))}
 
         <p className="so-p">{d.constant}</p>
 
-        <div className="section-label">
-          <span className="rule"></span><span className="label-text">{d.notLabel}</span><span className="rule"></span>
-        </div>
+        <p className="so-divider">{d.notLabel}</p>
         <p className="so-p">{d.not}</p>
 
-        <div className="section-label">
-          <span className="rule"></span><span className="label-text">{d.casesLabel}</span><span className="rule"></span>
-        </div>
+        <p className="so-divider">{d.casesLabel}</p>
         <p className="so-p">{d.cases}</p>
 
         <p className="so-p"><a className="p-link" href={mailHref}>{SO_MAIL}<span className="arrow">→</span></a></p>

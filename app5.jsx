@@ -1,4 +1,4 @@
-// app5.jsx — sts site (live, Sept 2026). App-Shell, TopBar, Hero, Contact, Closing, Footer.
+// app5.jsx – sts site (live, Sept 2026). App-Shell, TopBar, Hero, Contact, Closing, Footer.
 // Tweak-Panel entfernt: theme/lang laufen über useState + localStorage.
 const { useState, useEffect, useRef } = React;
 
@@ -23,13 +23,15 @@ function useTweaks(defaults) {
 }
 
 // ─────────────────────────────────────────────────────────────────
-// Wordmark — script illustration with text fallback for missing ones
+// Wordmark – script illustration with text fallback for missing ones
 // ─────────────────────────────────────────────────────────────────
 const WORDMARKS_AVAILABLE = new Set([
   "strategy", "sparring", "execution", "secondopinion", "advisory", "design", "contact", "sts",
 ]);
 function Wordmark({ name, label, className = "" }) {
-  const has = WORDMARKS_AVAILABLE.has(name);
+  // TEMP: Skript-Schriftzüge deaktiviert zugunsten klarer Versal-Headlines (Lesbarkeit).
+  // Zurückschalten: die Zeile unten entfernen, dann greift wieder die SVG-Maske.
+  const has = false && WORDMARKS_AVAILABLE.has(name);
   if (has) {
     return (
       <span
@@ -43,13 +45,13 @@ function Wordmark({ name, label, className = "" }) {
       />
     );
   }
-  // FLAG: wordmark missing — text fallback until SVG is delivered (sparring, second opinion).
-  return <span className={"wm-fallback " + className} aria-label={label || name}>{label || name}</span>;
+  // Versal-Headline statt Skript
+  return <span className={"wm-headline " + className} aria-label={label || name}>{label || name}</span>;
 }
 window.Wordmark = Wordmark;
 
 // ─────────────────────────────────────────────────────────────────
-// Content — bilingual
+// Content – bilingual
 // ─────────────────────────────────────────────────────────────────
 const COPY = {
   de: {
@@ -78,16 +80,16 @@ const COPY = {
         submit: "Nachricht senden",
         sending: "Wird gesendet …",
         success: "Danke. Ich melde mich.",
-        error: "Etwas ist schiefgelaufen. Bitte nochmal versuchen — oder direkt per Mail.",
+        error: "Etwas ist schiefgelaufen. Bitte nochmal versuchen – oder direkt per Mail.",
       },
       directory: [
         { label: "E-Mail",   href: "mailto:" + MAIL, text: MAIL },
         { label: "Telefon",  href: "tel:+436641616164", text: "+43 664 1616164" },
         { label: "LinkedIn", href: "https://www.linkedin.com/in/stefan-schindele-wien/", text: "linkedin.com / stefan-schindele-wien", external: true },
-        { label: "Standort", text: "Wien — München" },
+        { label: "Standort", text: "Wien – München" },
       ],
     },
-    footer: { left: "© 2026 sts — Stefan Schindele e.U. · Wien", imprint: "Impressum", agb: "AGB", privacy: "Datenschutz", right: "das ende von vielleicht." },
+    footer: { left: "© 2026 sts – Stefan Schindele e.U. · Wien", imprint: "Impressum", agb: "AGB", privacy: "Datenschutz", right: "das ende von vielleicht." },
   },
   en: {
     practice: "Stefan Schindele · Vienna",
@@ -115,21 +117,21 @@ const COPY = {
         submit: "Send message",
         sending: "Sending …",
         success: "Thank you. I'll be in touch.",
-        error: "Something went wrong. Please try again — or reach out by mail directly.",
+        error: "Something went wrong. Please try again – or reach out by mail directly.",
       },
       directory: [
         { label: "Email",    href: "mailto:" + MAIL, text: MAIL },
         { label: "Phone",    href: "tel:+436641616164", text: "+43 664 1616164" },
         { label: "LinkedIn", href: "https://www.linkedin.com/in/stefan-schindele-wien/", text: "linkedin.com / stefan-schindele-wien", external: true },
-        { label: "Based",    text: "Vienna — Munich" },
+        { label: "Based",    text: "Vienna – Munich" },
       ],
     },
-    footer: { left: "© 2026 sts — Stefan Schindele e.U. · Vienna", imprint: "Imprint", agb: "Terms", privacy: "Privacy", right: "the end of maybe." },
+    footer: { left: "© 2026 sts – Stefan Schindele e.U. · Vienna", imprint: "Imprint", agb: "Terms", privacy: "Privacy", right: "the end of maybe." },
   },
 };
 
 // ─────────────────────────────────────────────────────────────────
-// Top bar — reduziert: Marke · Kontakt (Mail) · Sprache · Modus
+// Top bar – reduziert: Marke · Kontakt (Mail) · Sprache · Modus
 // ─────────────────────────────────────────────────────────────────
 function TopBar({ lang, setLang, theme, setTheme, copy }) {
   const [scrolled, setScrolled] = useState(false);
@@ -162,13 +164,13 @@ function TopBar({ lang, setLang, theme, setTheme, copy }) {
 }
 
 // ─────────────────────────────────────────────────────────────────
-// Hero — sts logo + name + motto + subline + direkter Mail-Zugang
+// Hero – sts logo + name + motto + subline + direkter Mail-Zugang
 // ─────────────────────────────────────────────────────────────────
 function Hero({ copy, subKey }) {
   const h = copy.hero;
   return (
     <section className="hero" id="top" data-screen-label="Hero">
-      <span className="sts-logo" role="img" aria-label="sts" style={{ WebkitMaskImage: "url(assets/logo-medium.svg)", maskImage: "url(assets/logo-medium.svg)" }} />
+      <span className="sts-logo" role="img" aria-label="sts" style={{ WebkitMaskImage: "url(assets/wordmark-sts.svg)", maskImage: "url(assets/wordmark-sts.svg)" }} />
       <div className="sts-name">{h.name}</div>
       <h1 className="hero-motto">{h.motto[0]}{h.motto[1]}<span className="dot">{h.motto[2]}</span></h1>
       <p className="hero-sub">{h.sub[subKey] || h.sub.klarheit}</p>
@@ -182,7 +184,7 @@ function Hero({ copy, subKey }) {
 }
 
 // ─────────────────────────────────────────────────────────────────
-// Contact Form — Formspree, Alternative zu mailto
+// Contact Form – Formspree, Alternative zu mailto
 // ─────────────────────────────────────────────────────────────────
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mljenlro";
 
@@ -248,7 +250,7 @@ function ContactForm({ t }) {
 }
 
 // ─────────────────────────────────────────────────────────────────
-// Contact — direkter Mail-Weg + Kurzverzeichnis
+// Contact – direkter Mail-Weg + Kurzverzeichnis
 // ─────────────────────────────────────────────────────────────────
 function Contact({ copy }) {
   const c = copy.contact;
@@ -294,7 +296,7 @@ function Closing() {
   return (
     <section className="closing" aria-hidden="true">
       <div className="closing-inner">
-        <span className="closing-sts" role="img" aria-label="sts" style={{ WebkitMaskImage: "url(assets/logo-medium.svg)", maskImage: "url(assets/logo-medium.svg)" }} />
+        <span className="closing-sts" role="img" aria-label="sts" style={{ WebkitMaskImage: "url(assets/wordmark-sts.svg)", maskImage: "url(assets/wordmark-sts.svg)" }} />
       </div>
     </section>
   );

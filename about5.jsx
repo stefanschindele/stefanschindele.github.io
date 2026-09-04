@@ -1,4 +1,4 @@
-// about5.jsx — Bio: kreative Herkunft zuerst, dann Konzern-Bio, angereichert aus CV 2026.
+// about5.jsx – Bio: kreative Herkunft zuerst, dann Konzern-Bio, angereichert aus CV 2026.
 // Stationen an den CV angeglichen (inkl. Demner Merlicek & Bergmann).
 const ABOUT5 = {
   de: {
@@ -6,8 +6,8 @@ const ABOUT5 = {
     title: "stefan schindele",
     role: "Marken- und Kommunikationsstratege",
     origin: "Begonnen hat es bei Vogue und Marie Claire in München, Grafik-Trainee und Praktikum bei Condé Nast und Gruner & Jahr. Danach die Meisterklasse für Grafik und Werbung bei Walter Lürzer an der Akademie für angewandte Kunst Wien, Abschluss als Mag. art.",
-    bio: "Zwanzig Jahre später: über zwei Jahrzehnte Markenstrategie und Brand Systems für internationale Organisationen. Bei A1 Telekom Austria Markenführung über sieben Märkte, in Zagreb die Leitung zweier Länder und eines 18-köpfigen Teams. Davor die Agentur- und Beratungsseite — Saffron, Demner Merlicek & Bergmann — und der Markteintritt von 3/Drei, aufgebaut von Grund auf. Marken über die Telekommunikation hinaus: OMV, Sony PlayStation, MasterCard, die Stadt Wien.",
-    bridge: <>Was bleibt, ist die Tiefe dieser Arbeit — <span className="accent">ohne den Apparat</span>, der sie sonst begleitet. Konzern-Erfahrung, direkt zugänglich.</>,
+    bio: "Zwanzig Jahre später: über zwei Jahrzehnte Markenstrategie und Brand Systems für internationale Organisationen. Bei A1 Telekom Austria Markenführung über sieben Märkte, in Zagreb die Leitung zweier Länder und eines 18-köpfigen Teams. Davor die Agentur- und Beratungsseite – Saffron, Demner Merlicek & Bergmann – und der Markteintritt von 3/Drei, aufgebaut von Grund auf. Marken über die Telekommunikation hinaus: OMV, Sony PlayStation, MasterCard, die Stadt Wien.",
+    bridge: <>Was bleibt, ist die Tiefe dieser Arbeit – <span className="accent">ohne den Apparat</span>, der sie sonst begleitet. Konzern-Erfahrung, direkt zugänglich.</>,
     stationsLabel: "Stationen",
     stations: [
       { years: "2016 – 2025", role: "Domain Lead Brand Strategy, Brand Management & Marketing Communications", org: "A1 Telekom Austria Group" },
@@ -21,9 +21,9 @@ const ABOUT5 = {
     label: "About",
     title: "stefan schindele",
     role: "Brand & communication strategist",
-    origin: "It started at Vogue and Marie Claire in Munich — a graphic design traineeship and internship at Condé Nast and Gruner & Jahr. Then the master class in graphic design and advertising under Walter Lürzer at the University of Applied Arts Vienna, graduating Mag. art.",
-    bio: "Twenty years on: more than two decades of brand strategy and brand systems for international organisations. At A1 Telekom Austria, brand management across seven markets; in Zagreb, leadership of two countries and an 18-person team. Before that the agency and consulting side — Saffron, Demner Merlicek & Bergmann — and the market launch of 3/Drei, built from the ground up. Brands beyond telecommunications: OMV, Sony PlayStation, MasterCard, the City of Vienna.",
-    bridge: <>What remains is the depth of that work — <span className="accent">without the apparatus</span> that usually comes with it. Corporate experience, directly accessible.</>,
+    origin: "It started at Vogue and Marie Claire in Munich – a graphic design traineeship and internship at Condé Nast and Gruner & Jahr. Then the master class in graphic design and advertising under Walter Lürzer at the University of Applied Arts Vienna, graduating Mag. art.",
+    bio: "Twenty years on: more than two decades of brand strategy and brand systems for international organisations. At A1 Telekom Austria, brand management across seven markets; in Zagreb, leadership of two countries and an 18-person team. Before that the agency and consulting side – Saffron, Demner Merlicek & Bergmann – and the market launch of 3/Drei, built from the ground up. Brands beyond telecommunications: OMV, Sony PlayStation, MasterCard, the City of Vienna.",
+    bridge: <>What remains is the depth of that work – <span className="accent">without the apparatus</span> that usually comes with it. Corporate experience, directly accessible.</>,
     stationsLabel: "Stations",
     stations: [
       { years: "2016 – 2025", role: "Domain Lead Brand Strategy, Brand Management & Marketing Communications", org: "A1 Telekom Austria Group" },

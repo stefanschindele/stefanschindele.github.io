@@ -1,4 +1,4 @@
-// network5.jsx — Netzwerk (live): freigegebene Partner-Texte.
+// network5.jsx – Netzwerk (live): freigegebene Partner-Texte.
 // Reihenfolge nach Dauer: Zündel (1998) → Saffron (2009) → Frontira (2015) → Engrd (2017).
 // Alle Partner freigegeben. Dubai entfernt (bis auf Weiteres).
 // FLAG: Engrd-Link fehlt · DE/EN-Abweichungen bei Frontira und Engrd noch angleichen.
@@ -6,8 +6,8 @@ const NETWORK5 = {
   de: {
     label: "Netzwerk",
     title: "die umsetzungsebene.",
-    intro: "Kein Apparat — aber auch kein Alleingang. Die Umsetzung führen Partner, mit denen seit Jahren, teils Jahrzehnten, echte Projekte entstanden sind. In jedem dieser Felder eigene Praxis: Das macht Auswahl belastbar, Briefings präzise und das Qualitätsurteil unabhängig. Die Verantwortung beim Kunden bleibt an einer Stelle.",
-    fine: "Arbeitsstand — alle Partner-Texte gehen vor Veröffentlichung zur Freigabe an die Partner.",
+    intro: "Kein Apparat – aber auch kein Alleingang. Die Umsetzung führen Partner, mit denen seit Jahren, teils Jahrzehnten, echte Projekte entstanden sind. In jedem dieser Felder eigene Praxis: Das macht Auswahl belastbar, Briefings präzise und das Qualitätsurteil unabhängig. Die Verantwortung beim Kunden bleibt an einer Stelle.",
+    fine: "Arbeitsstand – alle Partner-Texte gehen vor Veröffentlichung zur Freigabe an die Partner.",
     since: "seit",
     statusDraft: "zur Freigabe",
     statusHold: "nicht live · zur Abstimmung",
@@ -25,7 +25,7 @@ const NETWORK5 = {
       {
         name: "Frontira", field: "Business-Prozesse & AI", year: "2015", status: "draft",
         href: "https://frontira.com",
-        note: "Geschäftsprozesse in Automatisierung übersetzen — mit globalem Blick auf das, was gerade möglich ist. Seit 2015 gemeinsame Projekte: zuerst die strategische Planung, dann die internationale Strategie der A1-Rebrandings über Dachmarke und lokale Integration in sieben Ländern, später drei AI-Tools, von der Newsletter-Automatisierung bis zum Markenchatbot. Die Arbeitsteilung: gemeinsam Business Needs und Strategie klären auf der einen Seite; Frontira gießt sie in strategische Muster, Applikationen und robuste Systeme. Der Partner für Automatisierung, die den dahinterliegenden Geschäftsprozess wirklich versteht.",
+        note: "Geschäftsprozesse in Automatisierung übersetzen – mit globalem Blick auf das, was gerade möglich ist. Seit 2015 gemeinsame Projekte: zuerst die strategische Planung, dann die internationale Strategie der A1-Rebrandings über Dachmarke und lokale Integration in sieben Ländern, später drei AI-Tools, von der Newsletter-Automatisierung bis zum Markenchatbot. Die Arbeitsteilung: gemeinsam Business Needs und Strategie klären auf der einen Seite; Frontira gießt sie in strategische Muster, Applikationen und robuste Systeme. Der Partner für Automatisierung, die den dahinterliegenden Geschäftsprozess wirklich versteht.",
       },
       {
         name: "Engrd", field: "Digital", year: "2017", status: "draft",
@@ -37,8 +37,8 @@ const NETWORK5 = {
   en: {
     label: "Network",
     title: "the execution layer.",
-    intro: "No apparatus — but no going it alone either. Execution is carried by partners with whom real projects have been built over years, in some cases decades. Hands-on practice in each of these fields: that is what makes the selection sound, the briefings precise and the quality judgement independent. Responsibility towards the client stays in one place.",
-    fine: "Working draft — all partner texts go to the partners for approval before publication.",
+    intro: "No apparatus – but no going it alone either. Execution is carried by partners with whom real projects have been built over years, in some cases decades. Hands-on practice in each of these fields: that is what makes the selection sound, the briefings precise and the quality judgement independent. Responsibility towards the client stays in one place.",
+    fine: "Working draft – all partner texts go to the partners for approval before publication.",
     since: "since",
     statusDraft: "pending approval",
     statusHold: "not live · in coordination",
@@ -46,7 +46,7 @@ const NETWORK5 = {
     partners: [
       {
         name: "Rudolf Zündel", field: "Design", year: "1998", status: "draft",
-        note: "Conceptual design without frills: work that rests on one central idea — and stays true to it. Joint projects since 1998, from the design and advertising for ONE to Sembritzki Feinkost in Munich and mobile brands in Eastern Europe. The division of roles is well-rehearsed: consulting and briefing on one side, conceptual ideation and excellent design on the other. The partner for projects that need one clear, consistent design idea.",
+        note: "Conceptual design without frills: work that rests on one central idea – and stays true to it. Joint projects since 1998, from the design and advertising for ONE to Sembritzki Feinkost in Munich and mobile brands in Eastern Europe. The division of roles is well-rehearsed: consulting and briefing on one side, conceptual ideation and excellent design on the other. The partner for projects that need one clear, consistent design idea.",
       },
       {
         name: "Saffron Brand Consultants", field: "Brand Design", year: "2009", status: "hold",
@@ -56,12 +56,12 @@ const NETWORK5 = {
       {
         name: "Frontira", field: "Business processes & AI", year: "2015", status: "draft",
         href: "https://frontira.com",
-        note: "Translating business processes into automation — with a global view of what is just becoming possible. Joint projects since 2015: first the strategic planning of the A1 rebrandings across masterbrand and local integration, later three AI tools from newsletter automation to a brand chatbot. The division of labour: clarifying business needs on one side; Frontira casts them into strategic patterns and applications. The partner for automation that truly understands the business process beneath it.",
+        note: "Translating business processes into automation – with a global view of what is just becoming possible. Joint projects since 2015: first the strategic planning of the A1 rebrandings across masterbrand and local integration, later three AI tools from newsletter automation to a brand chatbot. The division of labour: clarifying business needs on one side; Frontira casts them into strategic patterns and applications. The partner for automation that truly understands the business process beneath it.",
       },
       {
         name: "Engrd", field: "Digital", year: "2017", status: "draft",
         href: "https://engrd.at/",
-        note: "Performance and aesthetics — two ambitions that rarely meet in digital. Joint projects since 2017, including the evolution of the A1 brand design with brand portal and guidelines, and work for Erste Bank. Strategy and concept on one side; Engrd structures and translates into digital — including AI experiments. The partner for websites, apps and UI/UX, up to interfaces for AI agents.",
+        note: "Performance and aesthetics – two ambitions that rarely meet in digital. Joint projects since 2017, including the evolution of the A1 brand design with brand portal and guidelines, and work for Erste Bank. Strategy and concept on one side; Engrd structures and translates into digital – including AI experiments. The partner for websites, apps and UI/UX, up to interfaces for AI agents.",
       },
     ],
   },

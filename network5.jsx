@@ -5,7 +5,7 @@
 const NETWORK5 = {
   de: {
     label: "Netzwerk",
-    title: "die umsetzungsebene.",
+    title: "die umsetzung.",
     intro: "Kein Apparat – aber auch kein Alleingang. Die Umsetzung führen Partner, mit denen seit Jahren, teils Jahrzehnten, echte Projekte entstanden sind. In jedem dieser Felder eigene Praxis: Das macht Auswahl belastbar, Briefings präzise und das Qualitätsurteil unabhängig. Die Verantwortung beim Kunden bleibt an einer Stelle.",
     fine: "Arbeitsstand – alle Partner-Texte gehen vor Veröffentlichung zur Freigabe an die Partner.",
     since: "seit",
@@ -36,7 +36,7 @@ const NETWORK5 = {
   },
   en: {
     label: "Network",
-    title: "the execution layer.",
+    title: "the execution.",
     intro: "No apparatus – but no going it alone either. Execution is carried by partners with whom real projects have been built over years, in some cases decades. Hands-on practice in each of these fields: that is what makes the selection sound, the briefings precise and the quality judgement independent. Responsibility towards the client stays in one place.",
     fine: "Working draft – all partner texts go to the partners for approval before publication.",
     since: "since",

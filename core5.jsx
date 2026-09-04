@@ -2,7 +2,7 @@
 const CORE5 = {
   de: {
     label: "Der Kern",
-    title: "eine disziplin.",
+    title: "meine disziplin.",
     lede: "Marken- und Kommunikationsstrategie: Verdichtung, Positionierung, Konzept – und die Führung der Umsetzung.",
     statement: "Sichtbar machen, was schon da ist.",
     note: "Keine Repositionierung. Verdichtung und Übersetzung der Strategie, die in einer Organisation oft schon existiert – nur unausgesprochen.",
@@ -12,7 +12,7 @@ const CORE5 = {
   },
   en: {
     label: "The core",
-    title: "one discipline.",
+    title: "my discipline.",
     lede: "Brand and communication strategy: distillation, positioning, concept – and the direction of execution.",
     statement: "Making visible what is already there.",
     note: "No repositioning. A distillation and translation of the strategy that often already exists inside an organisation – just unspoken.",

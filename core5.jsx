@@ -2,7 +2,7 @@
 const CORE5 = {
   de: {
     label: "Der Kern",
-    title: "meine disziplin.",
+    title: "eine disziplin.",
     lede: "Marken- und Kommunikationsstrategie: Verdichtung, Positionierung, Konzept – und die Führung der Umsetzung.",
     statement: "Sichtbar machen, was schon da ist.",
     note: "Keine Repositionierung. Verdichtung und Übersetzung der Strategie, die in einer Organisation oft schon existiert – nur unausgesprochen.",
@@ -12,7 +12,7 @@ const CORE5 = {
   },
   en: {
     label: "The core",
-    title: "my discipline.",
+    title: "one discipline.",
     lede: "Brand and communication strategy: distillation, positioning, concept – and the direction of execution.",
     statement: "Making visible what is already there.",
     note: "No repositioning. A distillation and translation of the strategy that often already exists inside an organisation – just unspoken.",
@@ -32,10 +32,6 @@ function CoreSection({ lang }) {
         </div>
         <h2 className="section-title">{d.title}</h2>
         <p className="section-lede">{d.lede}</p>
-      </div>
-
-      <div className="core-wm">
-        <Wordmark name="strategy" label="strategy" />
       </div>
 
       <div className="core-statement">

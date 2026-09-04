@@ -4,7 +4,7 @@
 const FORMATS5 = {
   de: {
     label: "Formate",
-    title: "drei zugänge.",
+    title: "mein zugang.",
     lede: "Dieselbe Arbeit – verschiedene Formen des Zugangs.",
     fine: "Arbeitsweisen, keine Pakete.",
     items: [
@@ -33,7 +33,7 @@ const FORMATS5 = {
   },
   en: {
     label: "Formats",
-    title: "three ways in.",
+    title: "my approach.",
     lede: "The same work – different forms of access.",
     fine: "Ways of working, not packages.",
     items: [

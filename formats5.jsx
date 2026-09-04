@@ -5,7 +5,7 @@ const FORMATS5 = {
   de: {
     label: "Formate",
     title: "mein zugang.",
-    lede: "Dieselbe Arbeit – verschiedene Formen des Zugangs.",
+    lede: "Von Innen nach Außen – verschiedene Formen meiner Arbeit.",
     fine: "Arbeitsweisen, keine Pakete.",
     items: [
       {

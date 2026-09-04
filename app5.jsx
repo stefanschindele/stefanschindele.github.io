@@ -1,18 +1,17 @@
 // app5.jsx – sts site (live, Sept 2026). App-Shell, TopBar, Hero, Contact, Closing, Footer.
-// Tweak-Panel entfernt: theme/lang laufen über useState + localStorage.
+// Tweak-Panel entfernt: lang läuft über useState + localStorage. Theme fix Light (Dark Mode entfernt).
 const { useState, useEffect, useRef } = React;
 
 const MAIL = "office@stefan-schindele.com";
 
 // ─────────────────────────────────────────────────────────────────
-// State: theme + lang, lokal im Browser gespeichert (kein Tracking).
+// State: lang, lokal im Browser gespeichert (kein Tracking). Theme fix Light.
 // ─────────────────────────────────────────────────────────────────
-const DEFAULTS = { theme: "dark", lang: "de", accent: "#F5332C", subline: "klarheit" };
+const DEFAULTS = { lang: "de", accent: "#F5332C", subline: "klarheit" };
 function useTweaks(defaults) {
   const read = (k, d) => { try { return window.localStorage.getItem("sts-" + k) || d; } catch (e) { return d; } };
   const [values, setValues] = useState(() => ({
     ...defaults,
-    theme: read("theme", defaults.theme),
     lang: read("lang", defaults.lang),
   }));
   const setTweak = (key, val) => {
@@ -133,7 +132,7 @@ const COPY = {
 // ─────────────────────────────────────────────────────────────────
 // Top bar – reduziert: Marke · Kontakt (Mail) · Sprache · Modus
 // ─────────────────────────────────────────────────────────────────
-function TopBar({ lang, setLang, theme, setTheme, copy }) {
+function TopBar({ lang, setLang, copy }) {
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -152,11 +151,6 @@ function TopBar({ lang, setLang, theme, setTheme, copy }) {
           <span className={lang === "de" ? "on" : "off"}>DE</span>
           <span className="sep">/</span>
           <span className={lang === "en" ? "on" : "off"}>EN</span>
-        </button>
-        <button className="tab-btn" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} aria-label="Toggle theme">
-          <span className={theme === "dark" ? "on" : "off"}>DARK</span>
-          <span className="sep">/</span>
-          <span className={theme === "light" ? "on" : "off"}>LIGHT</span>
         </button>
       </div>
     </div>
@@ -324,21 +318,17 @@ function SiteFooter({ copy }) {
 function App() {
   const [t, setTweak] = useTweaks(DEFAULTS);
   const lang = t.lang;
-  const theme = t.theme;
   const copy = COPY[lang];
 
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
     document.documentElement.lang = lang;
-  }, [theme, lang]);
+  }, [lang]);
 
   return (
     <>
       <TopBar
         lang={lang}
         setLang={(v) => setTweak("lang", v)}
-        theme={theme}
-        setTheme={(v) => setTweak("theme", v)}
         copy={copy}
       />
       <main className="page">

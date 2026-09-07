@@ -7,7 +7,7 @@ const MAIL = "office@stefan-schindele.com";
 // ─────────────────────────────────────────────────────────────────
 // State: lang, lokal im Browser gespeichert (kein Tracking). Theme fix Light.
 // ─────────────────────────────────────────────────────────────────
-const DEFAULTS = { lang: "de", accent: "#F5332C", subline: "kern" };
+const DEFAULTS = { lang: "de", accent: "#F5332C", subline: "klarheit" };
 function useTweaks(defaults) {
   const read = (k, d) => { try { return window.localStorage.getItem("sts-" + k) || d; } catch (e) { return d; } };
   const [values, setValues] = useState(() => ({
@@ -186,7 +186,6 @@ function Hero({ copy, subKey }) {
       <div className="sts-name">{h.name}</div>
       <h1 className="hero-motto">{h.motto[0]}{h.motto[1]}<span className="dot">{h.motto[2]}</span></h1>
       <p className="hero-sub">{h.sub[subKey] || h.sub.klarheit}</p>
-      <p className="hero-mail">{h.mailPrompt} <a href={"mailto:" + MAIL}>{MAIL}<span className="arrow">→</span></a></p>
       <div className="scroll-cue">
         <span className="cue-nav">
           {h.cue.map((c, i) => (

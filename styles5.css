@@ -167,7 +167,7 @@ body { background: var(--bg); color: var(--fg); overflow-x: hidden; }
 }
 .hero .scroll-cue {
   position: static; transform: none;
-  margin-top: clamp(36px, 7vh, 72px);
+  margin-top: clamp(56px, 10vh, 100px);
   font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
   color: var(--fg-3); display: flex; flex-direction: column; align-items: center; gap: 16px;
 }

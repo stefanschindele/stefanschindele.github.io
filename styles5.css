@@ -168,8 +168,8 @@ body { background: var(--bg); color: var(--fg); overflow-x: hidden; }
 .hero .scroll-cue {
   position: static; transform: none;
   margin-top: clamp(56px, 10vh, 100px);
-  font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--fg-3); display: flex; flex-direction: column; align-items: center; gap: 16px;
+  font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase;
+  color: var(--fg-2); display: flex; flex-direction: column; align-items: center; gap: 20px;
 }
 .hero .cue-nav {
   display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
@@ -179,8 +179,7 @@ body { background: var(--bg); color: var(--fg); overflow-x: hidden; }
 .hero .cue-nav a:hover { color: var(--accent); }
 .hero .cue-sep { color: var(--fg-3); opacity: 0.5; padding: 0 6px; }
 .hero .scroll-cue .line {
-  width: 1px; height: 40px;
-  background: linear-gradient(to bottom, transparent, var(--rule-strong));
+  width: 1px; height: 56px; background: var(--fg-3);
 }
 
 /* ============================================================
@@ -433,8 +432,8 @@ body { background: var(--bg); color: var(--fg); overflow-x: hidden; }
   text-align: center; margin: 0 0 40px;
 }
 .about-bio {
-  font-family: var(--font-sans); font-size: clamp(16px, 1.4vw, 19px);
-  line-height: 1.55; color: var(--fg); margin: 0 auto 24px;
+  font-family: var(--font-sans); font-size: clamp(16px, 1.35vw, 19px);
+  line-height: 1.6; color: var(--fg); margin: 0 auto 24px;
   max-width: 680px; text-align: center; text-wrap: pretty; text-transform: none;
 }
 .about-bridge {
@@ -561,7 +560,7 @@ body.scroll-locked { overflow: hidden; }
 .core-statement > p:first-child {
   font-family: var(--font-sans); font-weight: 400;
   font-size: clamp(28px, 3.6vw, 52px); line-height: 1.1;
-  letter-spacing: -0.005em; color: var(--accent); margin: 0; text-wrap: balance; text-transform: none;
+  letter-spacing: -0.005em; color: var(--fg); margin: 0; text-wrap: balance; text-transform: none;
 }
 .core-statement .core-note {
   font-size: 16px; line-height: 1.6; color: var(--fg-2);
@@ -615,8 +614,8 @@ body.scroll-locked { overflow: hidden; }
    ============================================================ */
 .reg-intro { max-width: 640px; margin: 48px auto 0; padding: 0 var(--space-l); text-align: center; }
 .reg-intro p {
-  font-family: var(--font-sans); font-size: clamp(17px, 1.7vw, 22px); line-height: 1.5;
-  color: var(--fg); margin: 0 0 18px; text-wrap: balance; text-transform: none;
+  font-family: var(--font-sans); font-size: clamp(17px, 1.4vw, 20px); line-height: 1.55;
+  color: var(--fg-2); margin: 0 0 18px; text-wrap: pretty; text-transform: none;
 }
 .reg-intro p:last-child { margin-bottom: 0; }
 .reg-intro .quiet { font-size: 15.5px; line-height: 1.6; color: var(--fg-2); }
@@ -914,8 +913,8 @@ body.scroll-locked { overflow: hidden; }
 .section-secondopinion .so-script .wm { -webkit-mask-position: center; mask-position: center; }
 .section-secondopinion .so-script .wm-fallback { font-size: clamp(56px, 7vw, 88px); text-align: center; }
 .section-secondopinion .so-p {
-  font-family: var(--font-sans); font-size: clamp(16px, 1.3vw, 19px);
-  line-height: 1.62; color: var(--fg-2); margin: clamp(16px, 2.4vh, 26px) auto 0;
+  font-family: var(--font-sans); font-size: clamp(16px, 1.35vw, 19px);
+  line-height: 1.6; color: var(--fg-2); margin: clamp(16px, 2.4vh, 26px) auto 0;
   max-width: 600px; text-align: center; text-wrap: pretty;
 }
 /* Zwischenüberschrift: klein, zentriert, mit klarem Abstand als Gruppentrenner */
@@ -926,8 +925,8 @@ body.scroll-locked { overflow: hidden; }
 }
 /* Die drei Formen: eigener Block, Name als Mini-Headline */
 .section-secondopinion .so-form {
-  font-family: var(--font-sans); font-size: clamp(16px, 1.3vw, 19px);
-  line-height: 1.62; color: var(--fg-2); margin: clamp(14px, 2vh, 22px) auto 0;
+  font-family: var(--font-sans); font-size: clamp(16px, 1.35vw, 19px);
+  line-height: 1.6; color: var(--fg-2); margin: clamp(14px, 2vh, 22px) auto 0;
   max-width: 600px; text-align: center; text-wrap: pretty;
 }
 .section-secondopinion .so-form strong { color: var(--fg); font-weight: 600; }

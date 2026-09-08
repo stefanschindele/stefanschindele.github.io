@@ -650,6 +650,18 @@ body.scroll-locked { overflow: hidden; }
    ============================================================ */
 :root { --font-display: "TT Norms", sans-serif; }
 
+/* Typo-System — wenige Stufen, alle Elemente mappen hierauf.
+   display > title > statement > lede > body > small > label */
+:root {
+  --t-display:   clamp(38px, 5vw, 76px);
+  --t-title:     clamp(28px, 3.4vw, 50px);
+  --t-statement: clamp(26px, 3vw, 42px);
+  --t-lede:      clamp(18px, 1.6vw, 22px);
+  --t-body:      clamp(16px, 1.15vw, 18px);
+  --t-small:     13px;
+  --t-label:     11px;
+}
+
 /* Titel: alle in TT Norms, Versalien, keine Condensed */
 .section-title {
   font-family: "TT Norms", sans-serif !important;
@@ -954,3 +966,33 @@ body.scroll-locked { overflow: hidden; }
 .format .f-script .wm-headline { font-size: clamp(24px, 2.6vw, 34px); letter-spacing: 0.08em; text-align: left; color: var(--accent); }
 .section-secondopinion .so-script .wm-headline { font-size: clamp(34px, 4.5vw, 60px); letter-spacing: 0.06em; color: var(--accent); text-align: center; }
 .partner .wm-headline { font-size: clamp(19px, 2vw, 25px); }
+
+/* ============================================================
+   TYPO-SYSTEM — konsolidiert (Sept 2026)
+   Bündelt die vielen historischen Größen auf wenige Stufen.
+   Steht bewusst als LETZTE Ebene, um die früheren v4/v5-Overrides
+   zu gewinnen (die mit !important arbeiten).
+   FLAG: Aufräum-Schritt offen — tote überschriebene font-size-Regeln
+   in den v3/v4/v5-Blöcken oben können später entfernt werden.
+   ============================================================ */
+.hero .hero-motto { font-size: var(--t-display) !important; }
+.hero .hero-sub {
+  font-size: var(--t-lede) !important; line-height: 1.45;
+  font-weight: 400; color: var(--fg-2);
+}
+.section-title { font-size: var(--t-title) !important; }
+.core-statement > p:first-child,
+.contact-lead { font-size: var(--t-statement) !important; line-height: 1.18; }
+.section-lede,
+.reg-intro p,
+.core-philosophy p,
+.about-bridge { font-size: var(--t-lede) !important; line-height: 1.5; }
+.about-bio,
+.section-secondopinion .so-p,
+.section-secondopinion .so-form,
+.core-statement .core-note,
+.format .f-p,
+.format .f-line,
+.st-role { font-size: var(--t-body) !important; line-height: 1.6; }
+.st-org,
+.p-note { font-size: var(--t-small) !important; }

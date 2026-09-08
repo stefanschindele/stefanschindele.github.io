@@ -61,9 +61,14 @@ function SecondOpinionSection({ lang }) {
         <p className="so-p">{d.intro2}</p>
 
         <p className="so-divider">{d.formsLabel}</p>
-        {d.forms.map((f, i) => (
-          <p className="so-form" key={i}><strong>{f.name}.</strong> {f.p}</p>
-        ))}
+        <ul className="stations so-stations">
+          {d.forms.map((f, i) => (
+            <li className="station" key={i}>
+              <span className="st-years">{f.name}</span>
+              <span className="st-main"><span className="st-role">{f.p}</span></span>
+            </li>
+          ))}
+        </ul>
 
         <p className="so-p">{d.constant}</p>
 

@@ -1,0 +1,25 @@
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --space-8: 96px;
+  --space-9: 128px;
+
+  --container: 1280px;
+  --gutter: 24px;
+  --margin-page: clamp(20px, 5vw, 80px);
+
+  --radius-0: 0;
+  --radius-field: 2px;
+  --radius-chip: 4px;
+  --rule-hair: 1px;
+  --rule-accent: 3px;
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-micro: 160ms;
+  --dur-std: 320ms;
+}

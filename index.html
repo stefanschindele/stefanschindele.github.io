@@ -1,34 +1,544 @@
-<!doctype html>
-<html lang="de">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>sts — Stefan Schindele · Das Ende von vielleicht.</title>
-  <meta name="description" content="sts — Stefan Schindele. Strategie für Marke und Kommunikation. Wien." />
-  <link rel="stylesheet" href="colors_and_type.css" />
-  <link rel="stylesheet" href="styles5.css" />
-  <template id="__bundler_thumbnail">
-    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <rect width="200" height="200" fill="#000"></rect>
-      <text x="100" y="118" text-anchor="middle"
-            font-family="Georgia, serif" font-style="italic"
-            font-size="64" letter-spacing="4" fill="#F5332C">sts</text>
-    </svg>
-  </template>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
 <body>
-  <div id="root"></div>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="styles.css">
+  <script src="./image-slot.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; background: #fff; }
+    html { scroll-behavior: smooth; }
+    @media (max-width: 640px) { .bar-city { display: none !important; } }
+    @media (max-width: 360px) { .bar-contact { display: none !important; } }
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+    input, textarea, button { font: inherit; letter-spacing: inherit; text-transform: inherit; }
+    ::placeholder { color: inherit; opacity: .55; }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } html { scroll-behavior: auto; } }
+  </style>
+</helmet>
+<div data-variant="{{ variantAttr }}" style="--red: {{ redTone }}; --text-hero: {{ sizeHero }}; --text-xxl: {{ sizeXxl }}; --text-l: {{ sizeL }}; --text-s: {{ sizeS }}; background: var(--surface); color: var(--ink); font-family: var(--font-sans); font-weight: 300; font-size: var(--text-s); line-height: var(--leading-text); letter-spacing: var(--tracking-text); text-transform: uppercase; text-align: left; min-height: 100vh; overflow-wrap: break-word; hyphens: manual; transition: background-color 400ms var(--ease), color 400ms var(--ease); overflow-x: hidden">
 
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 20; background: var(--surface); color: var(--ink); transition: padding var(--dur-std) var(--ease)">
+    <div style="max-width: var(--container); margin: 0 auto; padding: {{ barPad }} var(--margin-page); display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); font-size: var(--text-s); transition: padding var(--dur-std) var(--ease); border-bottom: 1px solid {{ barRule }}">
+      <a href="#top" style="display: flex; align-items: center; gap: var(--space-2); font-weight: 400">
+        <span style="white-space: nowrap">Stefan Schindele</span>
+        <span class="bar-city" style="display: inline-block; width: 6px; height: 6px; border-radius: 999px; background: var(--accent)"></span>
+        <span class="bar-city">{{ t.bar.city }}</span>
+      </a>
+      <div style="display: flex; align-items: center; gap: var(--space-5)">
+        <a class="bar-contact" href="mailto:office@stefan-schindele.com" style="white-space: nowrap">{{ t.bar.contact }}</a>
+        <div style="display: flex; gap: var(--space-2)">
+          <button onClick="{{ setDE }}" aria-pressed="{{ isDE }}" style="background: none; border: 0; padding: 4px 0; color: inherit; cursor: pointer; font-weight: {{ deWeight }}; opacity: {{ deOpacity }}; border-bottom: 1px solid {{ deRule }}">DE</button>
+          <span style="opacity: .55">/</span>
+          <button onClick="{{ setEN }}" aria-pressed="{{ isEN }}" style="background: none; border: 0; padding: 4px 0; color: inherit; cursor: pointer; font-weight: {{ enWeight }}; opacity: {{ enOpacity }}; border-bottom: 1px solid {{ enRule }}">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
 
-  <script type="text/babel" src="core5.jsx"></script>
-  <script type="text/babel" src="formats5.jsx"></script>
-  <script type="text/babel" src="secondopinion5.jsx"></script>
-  <script type="text/babel" src="proof5.jsx"></script>
-  <script type="text/babel" src="network5.jsx"></script>
-  <script type="text/babel" src="about5.jsx"></script>
-  <script type="text/babel" src="app5.jsx"></script>
+  <main style="max-width: var(--container); margin: 0 auto; padding: 0 var(--margin-page)">
+
+    <section id="top" data-screen-label="Hero" style="min-height: 100vh; box-sizing: border-box; padding: 120px 0 var(--space-6); display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-7)">
+      <div style="display: flex; flex-direction: column; gap: var(--space-7)">
+        <div style="display: flex; flex-direction: column; gap: var(--space-5)">
+          <h1 style="margin: 0; font-weight: 300; font-size: var(--text-hero); line-height: 0.95; letter-spacing: 0.04em; text-wrap: balance">{{ t.hero.mottoA }}<span style="font-weight: 400; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .16em">{{ t.hero.mottoHl }}</span><span style="color: var(--accent); font-weight: 400">.</span></h1>
+          <div style="font-size: var(--text-l); line-height: 1.3">{{ t.hero.sub }}</div>
+        </div>
+      </div>
+      <nav style="display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: end">
+        <ol style="flex: 1 1 320px; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; font-size: var(--text-s); line-height: 1.25">
+          <sc-for list="{{ anchors }}" as="a" hint-placeholder-count="7">
+            <li style="display: flex; gap: var(--space-3)"><span style="font-size: var(--text-s); width: 28px; padding-top: 6px">{{ a.n }}</span><a href="{{ a.href }}">{{ a.label }}</a></li>
+          </sc-for>
+        </ol>
+
+      </nav>
+    </section>
+
+    <section id="core" data-screen-label="Der Kern" style="scroll-margin-top: 60px; padding: var(--space-8) 0; display: flex; flex-direction: column; gap: var(--space-7)">
+      <div style="display: flex; flex-direction: column; gap: var(--space-4)">
+        <div style="width: 64px; height: 3px; background: var(--accent); box-shadow: 0 0 0 0 var(--ink)"></div>
+        <div style="display: flex; gap: var(--space-3); font-size: var(--text-s)"><span>01</span><span>{{ t.core.label }}</span></div>
+        <h2 style="margin: 0; font-weight: 300; font-size: var(--text-xxl); line-height: var(--leading-tight); letter-spacing: var(--tracking-head)">{{ t.core.title }}</h2>
+      </div>
+      <p style="margin: 0; max-width: 900px; font-size: var(--text-s); line-height: 1.3; text-wrap: pretty">{{ t.core.lead }}</p>
+      <div style="display: flex; flex-wrap: wrap; gap: var(--space-4) var(--space-6); align-items: start">
+        <p style="flex: 1 1 420px; margin: 0; font-size: var(--text-l); line-height: var(--leading-tight); letter-spacing: var(--tracking-head); color: var(--accent); font-weight: 400; text-wrap: balance">{{ t.core.claim }}</p>
+        <p style="flex: 1 1 320px; margin: 0; max-width: 480px; text-wrap: pretty">{{ t.core.body }}</p>
+      </div>
+      <p style="margin: 0; max-width: 1000px; font-size: var(--text-l); line-height: 1.3; text-wrap: pretty">{{ t.core.philoA }} <span style="font-weight: 400; color: var(--accent)">{{ t.core.philoB }}</span> {{ t.core.philoC }}</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: var(--space-4); font-size: var(--text-s)">
+        <sc-for list="{{ t.core.proofs }}" as="p" hint-placeholder-count="2">
+          <p style="margin: 0; padding-top: var(--space-3); border-top: 1px solid var(--rule); text-wrap: pretty">{{ p }}</p>
+        </sc-for>
+      </div>
+    </section>
+
+    <section id="formats" data-screen-label="Formate" style="scroll-margin-top: 60px; padding: var(--space-8) 0; display: flex; flex-direction: column; gap: var(--space-7)">
+      <div style="display: flex; flex-direction: column; gap: var(--space-4)">
+        <div style="width: 64px; height: 3px; background: var(--accent)"></div>
+        <div style="display: flex; gap: var(--space-3); font-size: var(--text-s)"><span>02</span><span>{{ t.formats.label }}</span></div>
+        <h2 style="margin: 0; font-weight: 300; font-size: var(--text-xxl); line-height: var(--leading-tight); letter-spacing: var(--tracking-head)">{{ t.formats.title }}</h2>
+        <p style="margin: 0; font-size: var(--text-s); line-height: 1.3; max-width: 760px">{{ t.formats.lead }}</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: var(--space-6) var(--space-4)">
+        <sc-for list="{{ t.formats.items }}" as="f" hint-placeholder-count="3">
+          <article style="display: flex; flex-direction: column; gap: var(--space-3); border-top: 1px solid var(--rule); padding-top: var(--space-3)">
+            <div style="display: flex; justify-content: space-between; font-size: var(--text-s)"><span>{{ f.n }}</span><span>{{ f.key }}</span></div>
+            <h3 style="margin: var(--space-4) 0 0; font-weight: 400; font-size: var(--text-l); line-height: 1.15; letter-spacing: var(--tracking-head); color: var(--accent); overflow-wrap: anywhere">{{ f.name }}</h3>
+            <p style="margin: 0; font-weight: 400">{{ f.sub }}</p>
+            <p style="margin: 0; font-size: var(--text-s); text-wrap: pretty">{{ f.body }}</p>
+          </article>
+        </sc-for>
+      </div>
+      <p style="margin: 0; font-size: var(--text-s)">{{ t.formats.foot }}</p>
+    </section>
+
+    <section id="secondopinion" data-screen-label="Second Opinion" style="scroll-margin-top: 60px; padding: var(--space-8) 0; display: flex; flex-direction: column; gap: var(--space-7)">
+      <div style="display: flex; flex-direction: column; gap: var(--space-4)">
+        <div style="width: 64px; height: 3px; background: var(--accent)"></div>
+        <div style="display: flex; gap: var(--space-3); font-size: var(--text-s)"><span>03</span><span>Second Opinion</span></div>
+        <h2 style="margin: 0; font-weight: 300; font-size: var(--text-xxl); line-height: var(--leading-tight); letter-spacing: var(--tracking-head)">second opinion.</h2>
+        <p style="margin: 0; font-size: var(--text-l); line-height: 1.3; max-width: 860px; text-wrap: pretty">{{ t.so.lead }}</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: var(--space-4) var(--space-6)">
+        <p style="flex: 1 1 360px; margin: 0; font-size: var(--text-s); line-height: var(--leading-tight); letter-spacing: var(--tracking-head); text-wrap: balance">{{ t.so.introA }}</p>
+        <p style="flex: 1 1 320px; margin: 0; max-width: 520px; align-self: end; text-wrap: pretty">{{ t.so.introB }}</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: var(--space-4)">
+        <div style="font-size: var(--text-s)">{{ t.so.formsTitle }}</div>
+        <div style="display: flex; flex-direction: column">
+          <sc-for list="{{ t.so.forms }}" as="fm" hint-placeholder-count="3">
+            <div style="display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); border-top: 1px solid var(--rule); padding: var(--space-4) 0">
+              <div style="flex: 0 1 300px; font-size: var(--text-l); font-weight: 400; letter-spacing: var(--tracking-head); color: var(--accent)">{{ fm.name }}</div>
+              <div style="flex: 1 1 380px; max-width: 640px; text-wrap: pretty">{{ fm.text }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <p style="margin: 0; max-width: 760px; font-size: var(--text-s); text-wrap: pretty">{{ t.so.formsNote }}</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: var(--space-6) var(--space-4)">
+        <div style="display: flex; flex-direction: column; gap: var(--space-3); border-top: 1px solid var(--rule); padding-top: var(--space-3)">
+          <div style="font-size: var(--text-l)">{{ t.so.notTitle }}</div>
+          <p style="margin: 0; text-wrap: pretty">{{ t.so.notText }}</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: var(--space-3); border-top: 1px solid var(--rule); padding-top: var(--space-3)">
+          <div style="font-size: var(--text-l)">{{ t.so.occTitle }}</div>
+          <p style="margin: 0; text-wrap: pretty">{{ t.so.occText }}</p>
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: baseline">
+        <a href="mailto:office@stefan-schindele.com?subject=Second%20Opinion" style="flex: 1 1 360px; font-size: var(--text-s); letter-spacing: var(--tracking-head); line-height: 1.1; text-transform: none; overflow-wrap: anywhere">office@stefan-schindele.com →</a>
+        <p style="flex: 1 1 320px; margin: 0; font-size: var(--text-s); max-width: 480px">{{ t.so.follow }}</p>
+      </div>
+    </section>
+
+    <section id="sichtbar" data-screen-label="Sichtbar" style="scroll-margin-top: 60px; padding: var(--space-8) 0; display: flex; flex-direction: column; gap: var(--space-7)">
+      <div style="display: flex; flex-direction: column; gap: var(--space-4)">
+        <div style="width: 64px; height: 3px; background: var(--accent)"></div>
+        <div style="display: flex; gap: var(--space-3); font-size: var(--text-s)"><span>04</span><span>{{ t.vis.label }}</span></div>
+        <h2 style="margin: 0; font-weight: 300; font-size: var(--text-xxl); line-height: var(--leading-tight); letter-spacing: var(--tracking-head)">{{ t.vis.title }}</h2>
+        <p style="margin: 0; font-size: var(--text-l); line-height: 1.3; max-width: 860px; text-wrap: pretty">{{ t.vis.lead }}</p>
+      </div>
+      <div style="display: flex; flex-direction: column">
+        <sc-for list="{{ t.vis.rows }}" as="r" hint-placeholder-count="4">
+          <div style="display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); border-top: 1px solid var(--rule); padding: var(--space-4) 0">
+            <div style="flex: 0 1 240px; font-size: var(--text-s); color: var(--accent); font-weight: 400">{{ r.period }}</div>
+            <div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: var(--space-2)">
+              <div style="font-size: var(--text-s); line-height: 1.25; text-wrap: pretty">{{ r.proof }}</div>
+              <div style="font-size: var(--text-s)">{{ r.role }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section id="network" data-screen-label="Netzwerk" style="scroll-margin-top: 60px; padding: var(--space-8) 0; display: flex; flex-direction: column; gap: var(--space-7)">
+      <div style="display: flex; flex-direction: column; gap: var(--space-4)">
+        <div style="width: 64px; height: 3px; background: var(--accent)"></div>
+        <div style="display: flex; gap: var(--space-3); font-size: var(--text-s)"><span>05</span><span>{{ t.net.label }}</span></div>
+        <h2 style="margin: 0; font-weight: 300; font-size: var(--text-xxl); line-height: var(--leading-tight); letter-spacing: var(--tracking-head)">{{ t.net.title }}</h2>
+      </div>
+      <p style="margin: 0; max-width: 900px; font-size: var(--text-s); line-height: 1.3; text-wrap: pretty">{{ t.net.intro }}</p>
+      <div style="display: flex; flex-direction: column">
+        <sc-for list="{{ partners }}" as="pa" hint-placeholder-count="2">
+          <article style="display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-4); border-top: 1px solid var(--rule); padding: var(--space-5) 0">
+            <div style="flex: 0 1 300px; display: flex; flex-direction: column; gap: var(--space-2)">
+              <div style="font-size: var(--text-s); color: var(--accent); font-weight: 400">{{ pa.since }}</div>
+              <div style="font-size: var(--text-l); letter-spacing: var(--tracking-head); line-height: 1.1">{{ pa.name }}</div>
+              <div style="font-size: var(--text-s)">{{ pa.field }}</div>
+            </div>
+            <div style="flex: 1 1 420px; max-width: 680px; display: flex; flex-direction: column; gap: var(--space-3)">
+              <p style="margin: 0; text-wrap: pretty">{{ pa.text }}</p>
+              <sc-if value="{{ pa.hasLink }}" hint-placeholder-val="{{ false }}">
+                <a href="{{ pa.href }}" target="_blank" rel="noopener noreferrer" style="font-size: var(--text-s); font-weight: 400">{{ pa.linkLabel }}</a>
+              </sc-if>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+    </section>
+
+    <section id="about" data-screen-label="Über mich" style="scroll-margin-top: 60px; padding: var(--space-8) 0; display: flex; flex-direction: column; gap: var(--space-7)">
+      <div style="display: flex; flex-direction: column; gap: var(--space-4)">
+        <div style="width: 64px; height: 3px; background: var(--accent)"></div>
+        <div style="display: flex; gap: var(--space-3); font-size: var(--text-s)"><span>06</span><span>{{ t.about.label }}</span></div>
+        <h2 style="margin: 0; font-weight: 300; font-size: var(--text-xxl); line-height: var(--leading-tight); letter-spacing: var(--tracking-head)">stefan schindele</h2>
+        <p style="margin: 0; font-size: var(--text-l)">{{ t.about.role }}</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: var(--space-6) var(--space-6); align-items: start">
+        <div style="flex: 0 1 380px; width: 100%; aspect-ratio: 4 / 5; position: relative; filter: grayscale(1)">
+          <img src="assets/about-portrait.jpg" alt="Stefan Schindele" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 62% 30%">
+        </div>
+        <div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: var(--space-4); max-width: 640px">
+          <sc-for list="{{ t.about.bio }}" as="b" hint-placeholder-count="2">
+            <p style="margin: 0; text-wrap: pretty">{{ b }}</p>
+          </sc-for>
+          <p style="margin: var(--space-4) 0 0; font-size: var(--text-s); line-height: 1.3; text-wrap: pretty">{{ t.about.bridgeA }} <span style="font-weight: 400; color: var(--accent)">{{ t.about.bridgeB }}</span></p>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: var(--space-4)">
+        <div style="font-size: var(--text-l)">{{ t.about.stationsTitle }}</div>
+        <div style="display: flex; flex-direction: column">
+          <sc-for list="{{ t.about.stations }}" as="s" hint-placeholder-count="5">
+            <div style="display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-4); border-top: 1px solid var(--rule); padding: var(--space-3) 0; font-size: var(--text-s)">
+              <div style="flex: 0 1 160px; color: var(--accent); font-weight: 400">{{ s.period }}</div>
+              <div style="flex: 2 1 380px">{{ s.role }}</div>
+              <div style="flex: 1 1 260px; font-weight: 400">{{ s.org }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" data-screen-label="Kontakt" style="scroll-margin-top: 60px; padding: var(--space-8) 0; display: flex; flex-direction: column; gap: var(--space-7)">
+      <div style="display: flex; flex-direction: column; gap: var(--space-4)">
+        <div style="width: 64px; height: 3px; background: var(--accent)"></div>
+        <div style="display: flex; gap: var(--space-3); font-size: var(--text-s)"><span>07</span><span>{{ t.contact.label }}</span></div>
+        <h2 style="margin: 0; font-weight: 300; font-size: var(--text-xxl); line-height: var(--leading-tight); letter-spacing: var(--tracking-head)">{{ t.contact.title }}</h2>
+        <p style="margin: 0; font-size: var(--text-s); line-height: 1.3; max-width: 760px; text-wrap: pretty">{{ t.contact.lead }}</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: var(--space-7) var(--space-6); align-items: start">
+        <div style="flex: 1 1 360px; display: flex; flex-direction: column; gap: var(--space-6)">
+          <a href="mailto:office@stefan-schindele.com" style="display: flex; flex-direction: column; gap: var(--space-2); align-self: start; max-width: 100%; box-sizing: border-box; padding: var(--space-4) var(--space-5); background: var(--ink); color: var(--surface); text-decoration: none; transition: transform var(--dur-micro) var(--ease)" style-hover="transform: translateY(-2px); text-decoration: none">
+            <span style="font-size: var(--text-s); font-weight: 400">{{ t.contact.btn }}</span>
+            <span style="font-size: var(--text-s); text-transform: none; letter-spacing: .02em; overflow-wrap: anywhere">office@stefan-schindele.com →</span>
+          </a>
+          <dl style="margin: 0; display: flex; flex-direction: column; font-size: var(--text-s)">
+            <sc-for list="{{ directory }}" as="d" hint-placeholder-count="4">
+              <div style="display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-4); border-top: 1px solid var(--rule); padding: var(--space-3) 0">
+                <dt style="flex: 0 0 120px">{{ d.k }}</dt>
+                <dd style="margin: 0; flex: 1 1 200px; font-weight: 400; overflow-wrap: anywhere"><sc-if value="{{ d.hasHref }}" hint-placeholder-val="{{ true }}"><a href="{{ d.href }}" target="{{ d.target }}" rel="noopener noreferrer">{{ d.v }}</a></sc-if><sc-if value="{{ d.noHref }}" hint-placeholder-val="{{ false }}"><span>{{ d.v }}</span></sc-if></dd>
+              </div>
+            </sc-for>
+          </dl>
+        </div>
+        <div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: var(--space-4)">
+          <div style="font-size: var(--text-s)">{{ t.contact.formTitle }}</div>
+          <sc-if value="{{ showForm }}" hint-placeholder-val="{{ true }}">
+            <form onSubmit="{{ submit }}" style="display: flex; flex-direction: column; gap: var(--space-5)">
+              <label style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-s)">{{ t.contact.fName }}
+                <input name="name" required="required" value="{{ fName }}" onChange="{{ onName }}" style="background: transparent; border: 0; border-bottom: 1px solid var(--rule); border-radius: var(--radius-field); color: var(--ink); padding: var(--space-2) 0; font-size: var(--text-s); outline: none" style-focus="border-bottom: 2px solid var(--ink)">
+              </label>
+              <label style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-s)">{{ t.contact.fEmail }}
+                <input name="email" type="email" required="required" value="{{ fEmail }}" onChange="{{ onEmail }}" style="background: transparent; border: 0; border-bottom: 1px solid var(--rule); border-radius: var(--radius-field); color: var(--ink); padding: var(--space-2) 0; font-size: var(--text-s); outline: none; text-transform: none" style-focus="border-bottom: 2px solid var(--ink)">
+              </label>
+              <label style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-s)">{{ t.contact.fMsg }}
+                <textarea name="message" required="required" rows="5" value="{{ fMsg }}" onChange="{{ onMsg }}" style="background: transparent; border: 1px solid var(--rule); border-radius: var(--radius-field); color: var(--ink); padding: var(--space-3); font-size: var(--text-s); resize: vertical; outline: none" style-focus="border: 1px solid var(--ink); box-shadow: inset 0 0 0 1px var(--ink)"></textarea>
+              </label>
+              <sc-if value="{{ showError }}" hint-placeholder-val="{{ false }}">
+                <p role="alert" style="margin: 0; font-size: var(--text-s); font-weight: 400; border-top: 3px solid var(--ink); padding-top: var(--space-3)">{{ t.contact.error }}</p>
+              </sc-if>
+              <button type="submit" disabled="{{ sending }}" style="align-self: start; background: transparent; color: var(--ink); border: 1px solid var(--ink); border-radius: 0; padding: var(--space-3) var(--space-5); font-size: var(--text-s); font-weight: 400; cursor: pointer; opacity: {{ btnOpacity }}; transition: background-color var(--dur-micro) var(--ease), color var(--dur-micro) var(--ease)" style-hover="background: var(--ink); color: var(--surface)">{{ sendLabel }}</button>
+            </form>
+          </sc-if>
+          <sc-if value="{{ showThanks }}" hint-placeholder-val="{{ false }}">
+            <p role="status" style="margin: 0; font-size: var(--text-s); letter-spacing: var(--tracking-head); line-height: 1.1; border-top: 1px solid var(--rule); padding-top: var(--space-4)">{{ t.contact.thanks }}</p>
+          </sc-if>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Closing" aria-hidden="true" style="padding: var(--space-8) 0 var(--space-6)">
+      <sc-if value="{{ isRot }}" hint-placeholder-val="{{ true }}"><img src="assets/logo-sts-white.png" alt="" style="display: block; width: {{ endLogoWidth }}; max-width: 100%; aspect-ratio: 1016 / 309; height: auto"></sc-if><sc-if value="{{ isBW }}" hint-placeholder-val="{{ false }}"><div style="width: {{ endLogoWidth }}; max-width: 100%; aspect-ratio: 1016 / 309; background: var(--red); -webkit-mask: url(assets/logo-sts-black.png) center / contain no-repeat; mask: url(assets/logo-sts-black.png) center / contain no-repeat"></div></sc-if>
+    </section>
+  </main>
+
+  <footer style="max-width: var(--container); margin: 0 auto; padding: 0 var(--margin-page)">
+    <div style="display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-5); justify-content: space-between; border-top: 1px solid var(--rule); padding: var(--space-4) 0 var(--space-5); font-size: var(--text-s)">
+      <div style="display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5)">
+        <span>{{ t.foot.copy }}</span>
+        <a href="impressum.html">{{ t.foot.imprint }}</a>
+        <a href="agb.html">{{ t.foot.terms }}</a>
+        <a href="datenschutz.html">{{ t.foot.privacy }}</a>
+      </div>
+      <span style="font-weight: 400">{{ t.foot.closing }}</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;variant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;rot&quot;,&quot;scarlett&quot;,&quot;schwarz-weiss&quot;],&quot;default&quot;:&quot;rot&quot;,&quot;tsType&quot;:&quot;'rot' | 'scarlett' | 'schwarz-weiss'&quot;,&quot;section&quot;:&quot;Variante&quot;},&quot;redTone&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#FF3F13&quot;,&quot;#F5332C&quot;],&quot;default&quot;:&quot;#FF3F13&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Variante&quot;},&quot;bwAccent&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Variante&quot;},&quot;formMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;demo-success&quot;,&quot;demo-error&quot;,&quot;live&quot;],&quot;default&quot;:&quot;live&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Formular&quot;},&quot;schlussLogo&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;signatur&quot;,&quot;gross&quot;],&quot;default&quot;:&quot;signatur&quot;,&quot;tsType&quot;:&quot;'signatur' | 'gross'&quot;},&quot;kontrast&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;stark&quot;,&quot;normal&quot;],&quot;default&quot;:&quot;stark&quot;,&quot;tsType&quot;:&quot;'stark' | 'normal'&quot;}}">
+const DE = {
+  bar: { city: 'Wien und München. Und dort, wo man mich braucht.', contact: 'Kontakt →' },
+  hero: { mottoA: 'Das Ende von ', mottoHl: 'vielleicht', sub: 'Klarheit in Marke und Kommunikation.', place: 'Wien und München. Und dort, wo man mich braucht.' },
+  anchors: ['Kern', 'Formate', 'Second Opinion', 'Sichtbar', 'Netzwerk', 'Über mich', 'Kontakt'],
+  core: {
+    label: 'Der Kern', title: 'eine disziplin.',
+    lead: 'Marken- und Kommunikationsstrategie: Verdichtung, Positionierung, Konzept – und die Führung der Umsetzung.',
+    claim: 'Sichtbar machen, was schon da ist.',
+    body: 'Keine Repositionierung. Verdichtung und Übersetzung der Strategie, die in einer Organisation oft schon existiert – nur unausgesprochen.',
+    philoA: 'Schwächen kennen.', philoB: 'Stärken erkennen.', philoC: 'Dann strategisch darauf aufbauen.',
+    proofs: [
+      'Analytisch in der Sache, kreativ im Weg dorthin – Verdichtung braucht beides: das Zerlegen und das überraschende Neu-Zusammensetzen.',
+      'Zwanzig Jahre Praxis in Marke und Kommunikation – im Konzern, über sieben Märkte, bis in die Umsetzung.'
+    ]
+  },
+  formats: {
+    label: 'Formate', title: 'mein zugang.', lead: 'Von Innen nach Außen – verschiedene Formen meiner Arbeit.', foot: 'Arbeitsweisen, keine Pakete.',
+    items: [
+      { n: '01', key: 'Strategy', name: 'Strategieprojekte', sub: 'Von der Analyse bis zur Umsetzungsführung.', body: 'Klare Aufgabe, klares Ergebnis. Marken- und Kommunikationsstrategie: Positionierung, Konzept, Roadmap – und die Führung der Gewerke, bis das Ergebnis steht. Sechs bis sechzehn Wochen, je nach Aufgabe. Für Übergänge auch auf Zeit im Haus.' },
+      { n: '02', key: 'Sparring', name: 'Sparring', sub: 'Laufender Partner für Kommunikationsverantwortliche.', body: 'Sparring heißt: Denken auf Augenhöhe. Keine Folien, sondern Fragen. Gespräche, die Umwege nehmen dürfen, weil dort oft die besseren Antworten liegen. Aus zwei Jahrzehnten Marken- und Kommunikationsarbeit – und einer Herkunft, die im Gestalten liegt, nicht im Verwalten.' },
+      { n: '03', key: 'Execution', name: 'Umsetzung', sub: 'Konzept und Umsetzung aus einer Hand – oder mit dem Netzwerk.', body: 'Kleinere Vorhaben entstehen direkt: Strategie, Konzept und Gestaltung in einer Hand, beschleunigt durch KI-gestützte Prozesse. Für mittelständische Aufgaben – etwa die Marke eines Architekturbüros – heißt das Positionierung bis fertiges Ergebnis, ohne Reibungsverlust. Wird es größer oder komplexer, führt das Netzwerk die Umsetzung.' }
+    ]
+  },
+  so: {
+    lead: 'Eine unabhängige Außensicht, bevor Budget und Öffentlichkeit daran hängen.',
+    introA: 'Was hältst du davon? So beginnt es meistens. Ein Konzept, ein Skript, eine Präsentation, manchmal eine ganze Strategie – über den Tisch geschoben, bevor sie weitergeht.',
+    introB: 'Die Antwort kommt von jemandem, der die Arbeit selbst gemacht hat, nicht nur beurteilt. Auf beiden Seiten des Tisches: im Konzern als Auftraggeber, in Agentur und Beratung als Lieferant.',
+    formsTitle: 'Drei Formen',
+    forms: [
+      { name: 'Kurzcheck', text: 'Ein einzelnes Werbemittel, ein Skript, ein Konzept. Ein Nachmittag Arbeit, ein Gespräch, eine schriftliche Einschätzung.' },
+      { name: 'Analyse', text: 'Strategien, Konzeptvorschläge, Designsysteme. Hier geht der Einarbeitung ein paar Tage voraus – dann Gespräch und ein Dokument mit Analyse und Empfehlung.' },
+      { name: 'Begleitung', text: 'Als unabhängige Stimme im Raum, wenn zwischen Agenturen, Konzepten oder Wegen entschieden wird. Pitch-Prozesse, Auswahlverfahren, Entscheidungsrunden. Über mehrere Tage, mit schriftlichem Ergebnis.' }
+    ],
+    formsNote: 'In jeder Form ein Gespräch und ein Dokument. Und in keiner Form eine neue Idee: Beurteilt wird, was vorliegt. Konzeption und Strategie entstehen hier nicht – das hält den Rahmen klein und die Grenze zum Strategieprojekt klar.',
+    notTitle: 'Wann nicht',
+    notText: 'Nicht sinnvoll, wenn die Entscheidung schon gefallen ist und nur noch Rückendeckung braucht. Ob die Meinung am Ende genutzt wird, ist offen. Dass sie gehört wird, nicht.',
+    occTitle: 'Typische Anlässe',
+    occText: 'Ein Vorstand, der ein Werbekonzept prüfen lässt, bevor es ins Budget geht. Ein Finanzinstitut, das das Designkonzept seiner Agentur von außen sehen will. Eine Agentur, die ein Konzept testen will, bevor der Kunde es sieht.',
+    follow: 'Folgemandate sind möglich – und stehen dann offen im Angebot. Nie auf dem Werk, das geprüft wurde.'
+  },
+  vis: {
+    label: 'Sichtbar', title: 'sichtbar.',
+    lead: 'Strategie zählt erst, wenn sie sichtbar wird. Vier Stellen, an denen sie es wurde.',
+    rows: [
+      { period: '2017 – 2022', proof: 'A1 Group · Markenwert von 0,9 auf 2,2 Mrd. € (Brand Finance)', role: 'Markenstrategie und -führung, alle Märkte' },
+      { period: '2011 · 2017 – 2021', proof: 'A1 Rebranding · eine Dachmarke, sieben Länder', role: 'Österreich als Berater bei Saffron, danach sechs Länder als Verantwortlicher im Konzern' },
+      { period: '2003 – 2006', proof: '3/Drei Österreich · Markteintritt, Marke von null', role: 'Head of Marketing Communication' },
+      { period: '2024', proof: 'A1 Prozesse · Quartalsbericht von drei Wochen auf drei Stunden, ein Posting auf fünfzehn', role: 'Konzept, Umsetzung mit Frontira' }
+    ]
+  },
+  net: {
+    label: 'Netzwerk', title: 'die umsetzung.',
+    intro: 'Kein Apparat – aber auch kein Alleingang. Die Umsetzung führen Partner, mit denen seit Jahren, teils Jahrzehnten, echte Projekte entstanden sind. In jedem dieser Felder eigene Praxis: Das macht Auswahl belastbar, Briefings präzise und das Qualitätsurteil unabhängig. Konzept, Auswahl und Qualität liegen an einer Stelle.',
+    partners: [
+      { since: 'seit 1998', name: 'Rudolf Zündel', field: 'Design', text: 'Konzeptionelles Design ohne Umwege: Gestaltung, die auf einer zentralen Idee basiert und ihr treu bleibt. Gemeinsame Arbeiten seit 1998, vom Design und der Werbung für ONE über Sembritzki Feinkost in München bis zu Mobilfunkmarken in Osteuropa. Die Rollenteilung ist eingespielt: Beratung und Briefing auf der einen Seite, konzeptionelle Ideenfindung und exzellentes Design auf der anderen. Der Partner für Projekte, die eine klare, durchgängige Design-Idee brauchen, die lange hält.', href: '', linkLabel: '' },
+      { since: 'seit 2009', name: 'Saffron Brand Consultants', field: 'Brand Design', text: 'Markendesign auf internationalem Niveau. Fünf Jahre als Client Service Director und Strategic Planner auf der Beratungsseite, danach Zusammenarbeit als Auftraggeber – unter anderem beim A1 Rebranding: eine Dachmarke für sieben Länder. Der Partner für Markenidentitäten, die über Märkte und Sprachen hinweg tragen müssen.' },
+      { since: 'seit 2015', name: 'Frontira', field: 'Business-Prozesse & AI', text: 'Prozesse, die sich nicht nach Technik anfühlen. Gemeinsam entstehen Automatisierungen, die im Alltag einer Organisation wirklich ankommen – bei A1 etwa ein Quartalsbericht, der statt drei Wochen drei Stunden braucht, und aus einem Posting werden fünfzehn. Konzept und Anforderung auf der einen Seite; Frontira baut und betreibt. Der Partner für Business-Prozesse und AI-Anwendungen.' },
+      { since: 'seit 2017', name: 'Engrd', field: 'Digital', text: 'Performance und Ästhetik: Ansprüche, die im Digitalen gerne mal nicht zusammenkommen. Seit 2017 gemeinsame Projekte, darunter die Weiterentwicklung des A1-Markendesigns samt Markenportal und Guidelines, Arbeiten für die Erste Bank sowie KI-Experimente für Markenwelten. Strategie und Konzept auf der einen Seite; Engrd strukturiert und übersetzt ins Digitale. Der Partner für Websites, Apps und UI/UX bis hin zu Interfaces für KI-Agenten.', href: 'https://engrd.at/', linkLabel: 'Website ↗' }
+    ]
+  },
+  about: {
+    label: 'Über mich', role: 'Marken- und Kommunikationsstratege',
+    bio: [
+      'Begonnen hat es bei Vogue und Marie Claire in München, Grafik-Trainee und Praktikum bei Condé Nast und Gruner & Jahr. Danach die Meisterklasse für Grafik und Werbung bei Walter Lürzer an der Akademie für angewandte Kunst Wien, Abschluss als Mag. art.',
+      'Danach zwei Jahrzehnte Markenstrategie und Brand Systems für internationale Organisationen. Bei A1 Telekom Austria Markenführung über sieben Märkte, in Zagreb die Leitung zweier Länder und eines 18-köpfigen Teams. Davor die Agentur- und Beratungsseite – Saffron, Demner Merlicek & Bergmann – und der Markteintritt von 3/Drei, aufgebaut von Grund auf. Marken über die Telekommunikation hinaus: OMV, Sony PlayStation, MasterCard, die Stadt Wien.'
+    ],
+    bridgeA: 'Was bleibt, ist die Tiefe dieser Arbeit – ohne den Apparat, der sie sonst begleitet.', bridgeB: 'Konzern-Erfahrung, direkt zugänglich.',
+    stationsTitle: 'Stationen',
+    stations: [
+      { period: '2016 – 2025', role: 'Domain Lead Brand Strategy, Brand Management & Marketing Communications', org: 'A1 Telekom Austria Group' },
+      { period: '2014 – 2016', role: 'Director Brand & Marketing Communication', org: 'Vipnet (Kroatien & Nordmazedonien)' },
+      { period: '2009 – 2014', role: 'Client Service Director & Strategic Planner', org: 'Saffron Brand Consultants' },
+      { period: '2006 – 2009', role: 'Account Director, BOARD MEMBER', org: 'Demner, Merlicek & Bergmann' },
+      { period: '2003 – 2006', role: 'Head of Marketing Communication', org: 'Hutchison 3G Austria (3/Drei)' }
+    ]
+  },
+  contact: {
+    label: 'Kontakt', title: 'kontakt', lead: 'Wien und München. Und dort, wo man mich braucht. Verfügbar für Projekte in DACH und CEE.',
+    btn: 'Schreiben Sie mir', formTitle: 'Oder direkt hier', fName: 'Name', fEmail: 'E-Mail', fMsg: 'Nachricht',
+    send: 'Nachricht senden', sending: 'Wird gesendet …', thanks: 'Danke. Ich melde mich.',
+    error: 'Etwas ist schiefgelaufen. Bitte nochmal versuchen – oder direkt per Mail.',
+    dir: ['E-Mail', 'Telefon', 'LinkedIn', 'Standort'], place: 'Wien – München'
+  },
+  foot: { copy: '© 2026 sts – Stefan Schindele e.U. · Wien', imprint: 'Impressum', terms: 'AGB', privacy: 'Datenschutz', closing: 'das ende von vielleicht.' }
+};
+
+const EN = {
+  bar: { city: 'Vienna and Munich. And wherever I\'m needed.', contact: 'Contact →' },
+  hero: { mottoA: 'The end of ', mottoHl: 'maybe', sub: 'Clarity in brand and communication.', place: 'Vienna and Munich. And wherever I\'m needed.' },
+  anchors: ['Core', 'Formats', 'Second Opinion', 'Proof', 'Network', 'About', 'Contact'],
+  core: {
+    label: 'The core', title: 'one discipline.',
+    lead: 'Brand and communication strategy: distillation, positioning, concept – and the direction of execution.',
+    claim: 'Making visible what is already there.',
+    body: 'No repositioning. A distillation and translation of the strategy that often already exists inside an organisation – just unspoken.',
+    philoA: 'Know the weaknesses.', philoB: 'Recognise the strengths.', philoC: 'Then build on them strategically.',
+    proofs: [
+      'Analytical on the substance, creative on the way there. Distillation takes both: pulling things apart, and putting them back together unexpectedly.',
+      'Twenty years of practice in brand and communication – inside the corporation, across seven markets, down to execution.'
+    ]
+  },
+  formats: {
+    label: 'Formats', title: 'my approach.', lead: 'The same work – different forms of access.', foot: 'Ways of working, not packages.',
+    items: [
+      { name: 'Strategy projects', sub: 'From analysis through to directing execution.', body: 'Clear task, clear result. Brand and communication strategy: positioning, concept, roadmap – and the direction of the disciplines until the result stands. Six to sixteen weeks, depending on the task. For transitions, also on-site for a time.' },
+      { name: 'Sparring', sub: 'An ongoing partner for heads of communication.', body: 'Sparring means thinking at eye level. No slides, but questions. Conversations that are allowed to take detours, because that is often where the better answers are. Drawn from two decades of brand and communication work – and a background in making things, not in administering them.' },
+      { name: 'Execution', sub: 'Concept and delivery from one hand – or with the network.', body: 'Smaller undertakings take shape directly: strategy, concept and design in one hand, accelerated by AI-supported processes. For mid-sized tasks – the brand of an architecture practice, say – that means positioning through to finished result, without friction. When it grows larger or more complex, the network carries the delivery.' }
+    ]
+  },
+  so: {
+    lead: 'An independent outside view, before budget and public exposure depend on it.',
+    introA: 'What do you think of this? That is how it usually starts. A concept, a script, a presentation, sometimes a whole strategy – pushed across the table before it goes any further.',
+    introB: 'The answer comes from someone who has done the work, not only assessed it. From both sides of the table: as client inside a corporation, as supplier in agency and consultancy.',
+    formsTitle: 'Three forms',
+    formsNote: 'In every form, one conversation and one document. And in none of them a new idea: what is assessed is what is on the table. Concept and strategy are not developed here – that keeps the frame small and the line to the strategy project clear.',
+    notTitle: 'When not',
+    notText: 'Not worthwhile if the decision has already been made and only needs backing. Whether the opinion gets used in the end is open. That it gets heard is not.',
+    occTitle: 'Typical occasions',
+    occText: 'A board that has an advertising concept reviewed before it goes into the budget. A financial institution that wants to see its agency\'s design concept from the outside. An agency that wants to test a concept before the client sees it.',
+    follow: 'Follow-up mandates are possible – and are then shown openly in the proposal. Never on the work that was reviewed.',
+    forms: [
+      { name: 'Quick check', text: 'A single piece of communication, a script, a concept. An afternoon\'s work, a conversation, a written assessment.' },
+      { name: 'Analysis', text: 'Strategies, concept proposals, design systems. A few days of reading in come first – then a conversation and a document with analysis and recommendation.' },
+      { name: 'Accompaniment', text: 'An independent voice in the room when the choice is between agencies, concepts or directions. Pitch processes, selection procedures, decision rounds. Over several days, with a written result.' }
+    ]
+  },
+  vis: {
+    label: 'Proof', title: 'visible.',
+    lead: 'Strategy only counts once it becomes visible. Four places where it did.',
+    rows: [{ period: '2017 – 2022', proof: 'A1 Group · brand value from 0.9 to 2.2 bn € (Brand Finance)', role: 'Brand strategy and management, all markets' },
+      { proof: 'A1 rebranding · one umbrella brand, seven countries', role: 'Austria as consultant at Saffron, then six countries as the lead responsible inside the group' },
+      { proof: '3/Drei Austria · market entry, brand from zero' },
+      { proof: 'A1 processes · quarterly report from three weeks to three hours, one post to fifteen', role: 'Concept, delivery with Frontira' }]
+  },
+  net: {
+    label: 'Network', title: 'the execution.',
+    intro: 'No apparatus – but no going it alone either. Execution is carried by partners with whom real projects have been built over years, in some cases decades. Hands-on practice in each of these fields: that is what makes the selection sound, the briefings precise and the quality judgement independent. Concept, selection and quality stay in one place.',
+    partners: [
+      { since: 'since 1998', text: 'Conceptual design without detours: design built on one central idea and true to it. Joint work since 1998, from the design and advertising for ONE through Sembritzki Feinkost in Munich to mobile brands in Eastern Europe. The division of roles is established: advice and briefing on one side, conceptual ideas and excellent design on the other. The partner for projects that need a clear, consistent design idea that lasts.' },
+      { since: 'since 2009', text: 'Brand design at an international level. Five years as Client Service Director and Strategic Planner on the consultancy side, then collaboration as client – among others on the A1 rebranding: one umbrella brand for seven countries. The partner for brand identities that have to carry across markets and languages.' },
+      { since: 'since 2015', field: 'Business processes & AI', text: 'Processes that do not feel like technology. Automations take shape that actually land in the day-to-day of an organisation – at A1, for example, a quarterly report that takes three hours instead of three weeks, and one post becomes fifteen. Concept and requirements on one side; Frontira builds and runs. The partner for business processes and AI applications.' },
+       { since: 'since 2017', text: 'Performance and aesthetics – two ambitions that rarely meet in digital. Joint projects since 2017, including the evolution of the A1 brand design with brand portal and guidelines, and work for Erste Bank. Strategy and concept on one side; Engrd structures and translates into digital – including AI experiments. The partner for websites, apps and UI/UX, up to interfaces for AI agents.' }]
+  },
+  about: {
+    label: 'About', role: 'Brand & communication strategist',
+    bridgeA: 'What remains is the depth of that work – without the apparatus that usually comes with it.', bridgeB: 'Corporate experience, directly accessible.',
+    bio: [
+      'It began at Vogue and Marie Claire in Munich: graphic design trainee and internship at Condé Nast and Gruner & Jahr. Then the master class for graphic design and advertising under Walter Lürzer at the Academy of Applied Arts Vienna, graduating as Mag. art.',
+      'After that, two decades of brand strategy and brand systems for international organisations. At A1 Telekom Austria, brand leadership across seven markets; in Zagreb, running two countries and a team of 18. Before that the agency and consultancy side – Saffron, Demner Merlicek & Bergmann – and the market entry of 3/Drei, built from the ground up. Brands beyond telecommunications: OMV, Sony PlayStation, MasterCard, the City of Vienna.'
+    ],
+    stationsTitle: 'Career',
+    stations: [{}, { org: 'Vipnet (Croatia & North Macedonia)' }]
+  },
+  contact: {
+    label: 'Get in touch', title: 'contact', lead: 'Vienna and Munich. And wherever I\'m needed. Available for projects across DACH and CEE.',
+    btn: 'Write to me', formTitle: 'Or right here', fName: 'Name', fEmail: 'Email', fMsg: 'Message',
+    send: 'Send message', sending: 'Sending …', thanks: 'Thank you. I\'ll be in touch.',
+    error: 'Something went wrong. Please try again – or reach out by mail directly.',
+    dir: ['Email', 'Phone', 'LinkedIn', 'Based'], place: 'Vienna – Munich'
+  },
+  foot: { copy: '© 2026 sts – Stefan Schindele e.U. · Vienna', imprint: 'Imprint', terms: 'Terms', privacy: 'Privacy', closing: 'the end of maybe.' }
+};
+
+function merge(base, over) {
+  if (Array.isArray(base)) return base.map((b, i) => (over && over[i] !== undefined) ? merge(b, over[i]) : b);
+  if (base && typeof base === 'object') {
+    const out = {};
+    for (const k in base) out[k] = (over && over[k] !== undefined) ? merge(base[k], over[k]) : base[k];
+    return out;
+  }
+  return over !== undefined ? over : base;
+}
+const DICT = { de: DE, en: merge(DE, EN) };
+const IDS = ['core', 'formats', 'secondopinion', 'sichtbar', 'network', 'about', 'contact'];
+
+class Component extends DCLogic {
+  state = { lang: 'de', compact: false, status: 'idle', fName: '', fEmail: '', fMsg: '' };
+
+  componentDidMount() {
+    let lang = 'de';
+    try { const s = localStorage.getItem('sts-lang'); if (s === 'de' || s === 'en') lang = s; } catch (e) {}
+    this.setLang(lang);
+    this.onScroll = () => { const c = window.scrollY > 40; if (c !== this.state.compact) this.setState({ compact: c }); };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+  }
+  componentWillUnmount() { window.removeEventListener('scroll', this.onScroll); }
+
+  setLang(lang) {
+    try { localStorage.setItem('sts-lang', lang); } catch (e) {}
+    document.documentElement.lang = lang;
+    this.setState({ lang });
+  }
+
+  submit = async (e) => {
+    e.preventDefault();
+    if (this.state.status === 'sending') return;
+    this.setState({ status: 'sending' });
+    const mode = this.props.formMode ?? 'live';
+    if (mode === 'live') {
+      try {
+        const res = await fetch('https://formspree.io/f/mljenlro', {
+          method: 'POST', headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: this.state.fName, email: this.state.fEmail, message: this.state.fMsg })
+        });
+        this.setState({ status: res.ok ? 'success' : 'error' });
+      } catch (err) { this.setState({ status: 'error' }); }
+    } else {
+      setTimeout(() => this.setState({ status: mode === 'demo-error' ? 'error' : 'success' }), 1100);
+    }
+  };
+
+  renderVals() {
+    const { lang, compact, status } = this.state;
+    const t = DICT[lang];
+    const variant = this.props.variant ?? 'rot';
+    const isRed = variant === 'rot' || variant === 'scarlett';
+    const variantAttr = isRed ? 'rot' : (this.props.bwAccent ?? true) ? 'bw-red' : 'bw';
+    const de = lang === 'de';
+    const c = t.contact;
+    return {
+      t, variantAttr,
+      isRot: isRed, isBW: !isRed,
+      redTone: variant === 'scarlett' ? '#F5332C' : (this.props.redTone ?? '#FF3F13'),
+      heroLogoWidth: (this.props.heroLogo ?? 100) + '%',
+      endLogoWidth: (this.props.schlussLogo ?? 'gross') === 'gross' ? '100%' : '180px',
+      ...(((this.props.kontrast ?? 'stark') === 'stark')
+        ? { sizeHero: 'clamp(38px, 12vw, 220px)', sizeXxl: 'clamp(34px, 6.3vw, 105px)', sizeL: 'clamp(18px, 1.6vw, 24px)', sizeS: '12px' }
+        : { sizeHero: 'clamp(48px, 8vw, 120px)', sizeXxl: 'clamp(28px, 4.2vw, 62px)', sizeL: '22px', sizeS: '13px' }),
+      barPad: compact ? '10px' : '22px',
+      barRule: compact ? 'var(--rule)' : 'transparent',
+      isDE: de, isEN: !de,
+      deWeight: de ? 400 : 300, enWeight: de ? 300 : 400,
+      deOpacity: de ? 1 : 0.6, enOpacity: de ? 0.6 : 1,
+      deRule: de ? 'currentColor' : 'transparent', enRule: de ? 'transparent' : 'currentColor',
+      setDE: () => this.setLang('de'), setEN: () => this.setLang('en'),
+      anchors: t.anchors.map((label, i) => ({ label, n: '0' + (i + 1), href: '#' + IDS[i] })),
+      partners: t.net.partners.map(p => ({ ...p, hasLink: !!p.href })),
+      directory: [
+        { k: c.dir[0], v: 'office@stefan-schindele.com', href: 'mailto:office@stefan-schindele.com', target: '_self' },
+        { k: c.dir[1], v: '+43 664 1616164', href: 'tel:+436641616164', target: '_self' },
+        { k: c.dir[2], v: 'linkedin.com / stefan-schindele-wien ↗', href: 'https://www.linkedin.com/in/stefan-schindele-wien/', target: '_blank' },
+        { k: c.dir[3], v: c.place, href: '', target: '' }
+      ].map(d => ({ ...d, hasHref: !!d.href, noHref: !d.href })),
+      showForm: status !== 'success', showThanks: status === 'success', showError: status === 'error',
+      sending: status === 'sending', btnOpacity: status === 'sending' ? 0.5 : 1,
+      sendLabel: status === 'sending' ? c.sending : c.send,
+      submit: this.submit,
+      fName: this.state.fName, fEmail: this.state.fEmail, fMsg: this.state.fMsg,
+      onName: e => this.setState({ fName: e.target.value }),
+      onEmail: e => this.setState({ fEmail: e.target.value }),
+      onMsg: e => this.setState({ fMsg: e.target.value })
+    };
+  }
+}
+</script>
 </body>
 </html>

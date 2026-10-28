@@ -281,7 +281,7 @@
   </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;variant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;rot&quot;,&quot;scarlett&quot;,&quot;schwarz-weiss&quot;],&quot;default&quot;:&quot;rot&quot;,&quot;tsType&quot;:&quot;'rot' | 'scarlett' | 'schwarz-weiss'&quot;,&quot;section&quot;:&quot;Variante&quot;},&quot;redTone&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#FF3F13&quot;,&quot;#F5332C&quot;],&quot;default&quot;:&quot;#FF3F13&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Variante&quot;},&quot;bwAccent&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Variante&quot;},&quot;formMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;demo-success&quot;,&quot;demo-error&quot;,&quot;live&quot;],&quot;default&quot;:&quot;demo-success&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Formular&quot;},&quot;schlussLogo&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;signatur&quot;,&quot;gross&quot;],&quot;default&quot;:&quot;signatur&quot;,&quot;tsType&quot;:&quot;'signatur' | 'gross'&quot;},&quot;kontrast&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;stark&quot;,&quot;normal&quot;],&quot;default&quot;:&quot;stark&quot;,&quot;tsType&quot;:&quot;'stark' | 'normal'&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;variant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;rot&quot;,&quot;scarlett&quot;,&quot;schwarz-weiss&quot;],&quot;default&quot;:&quot;rot&quot;,&quot;tsType&quot;:&quot;'rot' | 'scarlett' | 'schwarz-weiss'&quot;,&quot;section&quot;:&quot;Variante&quot;},&quot;redTone&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#FF3F13&quot;,&quot;#F5332C&quot;],&quot;default&quot;:&quot;#FF3F13&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Variante&quot;},&quot;bwAccent&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Variante&quot;},&quot;formMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;demo-success&quot;,&quot;demo-error&quot;,&quot;live&quot;],&quot;default&quot;:&quot;live&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Formular&quot;},&quot;schlussLogo&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;signatur&quot;,&quot;gross&quot;],&quot;default&quot;:&quot;signatur&quot;,&quot;tsType&quot;:&quot;'signatur' | 'gross'&quot;},&quot;kontrast&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;stark&quot;,&quot;normal&quot;],&quot;default&quot;:&quot;stark&quot;,&quot;tsType&quot;:&quot;'stark' | 'normal'&quot;}}">
 const DE = {
   bar: { city: 'Wien und München. Und dort, wo man mich braucht.', contact: 'Kontakt →' },
   hero: { mottoA: 'Das Ende von ', mottoHl: 'vielleicht', sub: 'Klarheit in Marke und Kommunikation.', place: 'Wien und München. Und dort, wo man mich braucht.' },
@@ -454,7 +454,7 @@ class Component extends DCLogic {
     e.preventDefault();
     if (this.state.status === 'sending') return;
     this.setState({ status: 'sending' });
-    const mode = this.props.formMode ?? 'demo-success';
+    const mode = this.props.formMode ?? 'live';
     if (mode === 'live') {
       try {
         const res = await fetch('https://formspree.io/f/mljenlro', {

@@ -136,7 +136,6 @@
         </div>
       </div>
       <div style="display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: baseline">
-        <a href="mailto:office@stefan-schindele.com?subject=Second%20Opinion" style="flex: 1 1 360px; font-size: var(--text-s); letter-spacing: var(--tracking-head); line-height: 1.1; text-transform: none; overflow-wrap: anywhere">office@stefan-schindele.com →</a>
         <p style="flex: 1 1 320px; margin: 0; font-size: var(--text-s); max-width: 480px">{{ t.so.follow }}</p>
       </div>
     </section>
@@ -209,10 +208,10 @@
         <div style="font-size: var(--text-l)">{{ t.about.stationsTitle }}</div>
         <div style="display: flex; flex-direction: column">
           <sc-for list="{{ t.about.stations }}" as="s" hint-placeholder-count="5">
-            <div style="display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-4); border-top: 1px solid var(--rule); padding: var(--space-3) 0; font-size: var(--text-s)">
-              <div style="flex: 0 1 160px; color: var(--accent); font-weight: 400">{{ s.period }}</div>
-              <div style="flex: 2 1 380px">{{ s.role }}</div>
-              <div style="flex: 1 1 260px; font-weight: 400">{{ s.org }}</div>
+            <div style="display: flex; flex-direction: column; gap: var(--space-1); border-top: 1px solid var(--rule); padding: var(--space-3) 0; font-size: var(--text-s)">
+              <div style="color: var(--accent); font-weight: 400">{{ s.period }}</div>
+              <div style="font-size: var(--text-l); line-height: 1.2">{{ s.org }}</div>
+              <div>{{ s.role }}</div>
             </div>
           </sc-for>
         </div>
@@ -285,7 +284,7 @@
   </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;variant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;rot&quot;,&quot;scarlett&quot;,&quot;schwarz-weiss&quot;],&quot;default&quot;:&quot;rot&quot;,&quot;tsType&quot;:&quot;'rot' | 'scarlett' | 'schwarz-weiss'&quot;,&quot;section&quot;:&quot;Variante&quot;},&quot;redTone&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#FF3F13&quot;,&quot;#F5332C&quot;],&quot;default&quot;:&quot;#FF3F13&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Variante&quot;},&quot;bwAccent&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Variante&quot;},&quot;formMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;demo-success&quot;,&quot;demo-error&quot;,&quot;live&quot;],&quot;default&quot;:&quot;live&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Formular&quot;},&quot;schlussLogo&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;signatur&quot;,&quot;gross&quot;],&quot;default&quot;:&quot;signatur&quot;,&quot;tsType&quot;:&quot;'signatur' | 'gross'&quot;},&quot;kontrast&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;stark&quot;,&quot;normal&quot;],&quot;default&quot;:&quot;stark&quot;,&quot;tsType&quot;:&quot;'stark' | 'normal'&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;variant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;rot&quot;,&quot;scarlett&quot;,&quot;schwarz-weiss&quot;],&quot;default&quot;:&quot;rot&quot;,&quot;tsType&quot;:&quot;'rot' | 'scarlett' | 'schwarz-weiss'&quot;,&quot;section&quot;:&quot;Variante&quot;},&quot;redTone&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#FF3F13&quot;,&quot;#F5332C&quot;],&quot;default&quot;:&quot;#FF3F13&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Variante&quot;},&quot;bwAccent&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Variante&quot;},&quot;formMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;demo-success&quot;,&quot;demo-error&quot;,&quot;live&quot;],&quot;default&quot;:&quot;live&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Formular&quot;},&quot;schlussLogo&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;signatur&quot;,&quot;gross&quot;],&quot;default&quot;:&quot;gross&quot;,&quot;tsType&quot;:&quot;'signatur' | 'gross'&quot;},&quot;kontrast&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;stark&quot;,&quot;normal&quot;],&quot;default&quot;:&quot;stark&quot;,&quot;tsType&quot;:&quot;'stark' | 'normal'&quot;}}">
 const DE = {
   bar: { city: 'Wien und München. Und dort, wo man mich braucht.', contact: 'Kontakt →' },
   hero: { mottoA: 'Das Ende von ', mottoHl: 'vielleicht', sub: 'Klarheit in Marke und Kommunikation.', place: 'Wien und München. Und dort, wo man mich braucht.' },
@@ -341,7 +340,7 @@ const DE = {
     intro: 'Kein Apparat – aber auch kein Alleingang. Die Umsetzung führen Partner, mit denen seit Jahren, teils Jahrzehnten, echte Projekte entstanden sind. In jedem dieser Felder eigene Praxis: Das macht Auswahl belastbar, Briefings präzise und das Qualitätsurteil unabhängig. Konzept, Auswahl und Qualität liegen an einer Stelle.',
     partners: [
       { since: 'seit 1998', name: 'Rudolf Zündel', field: 'Design', text: 'Konzeptionelles Design ohne Umwege: Gestaltung, die auf einer zentralen Idee basiert und ihr treu bleibt. Gemeinsame Arbeiten seit 1998, vom Design und der Werbung für ONE über Sembritzki Feinkost in München bis zu Mobilfunkmarken in Osteuropa. Die Rollenteilung ist eingespielt: Beratung und Briefing auf der einen Seite, konzeptionelle Ideenfindung und exzellentes Design auf der anderen. Der Partner für Projekte, die eine klare, durchgängige Design-Idee brauchen, die lange hält.', href: '', linkLabel: '' },
-      { since: 'seit 2009', name: 'Saffron Brand Consultants', field: 'Brand Design', text: 'Markendesign auf internationalem Niveau. Fünf Jahre als Client Service Director und Strategic Planner auf der Beratungsseite, danach Zusammenarbeit als Auftraggeber – unter anderem beim A1 Rebranding: eine Dachmarke für sieben Länder. Der Partner für Markenidentitäten, die über Märkte und Sprachen hinweg tragen müssen.' },
+      { since: 'seit 2009', name: 'Saffron Brand Consultants', field: 'Brand Design', text: 'Markendesign auf internationalem Niveau. Fünf Jahre als Client Service Director und Strategic Planner auf der Beratungsseite, danach Zusammenarbeit als Auftraggeber – unter anderem beim A1 Rebranding: eine Dachmarke für sieben Länder. Der Partner für Markenidentitäten, die über Märkte und Sprachen hinweg tragen müssen.', href: 'https://saffron-consultants.com/', linkLabel: 'Website ↗' },
       { since: 'seit 2015', name: 'Frontira', field: 'Business-Prozesse & AI', text: 'Prozesse, die sich nicht nach Technik anfühlen. Gemeinsam entstehen Automatisierungen, die im Alltag einer Organisation wirklich ankommen – bei A1 etwa ein Quartalsbericht, der statt drei Wochen drei Stunden braucht, und aus einem Posting werden fünfzehn. Konzept und Anforderung auf der einen Seite; Frontira baut und betreibt. Der Partner für Business-Prozesse und AI-Anwendungen.' },
       { since: 'seit 2017', name: 'Engrd', field: 'Digital', text: 'Performance und Ästhetik: Ansprüche, die im Digitalen gerne mal nicht zusammenkommen. Seit 2017 gemeinsame Projekte, darunter die Weiterentwicklung des A1-Markendesigns samt Markenportal und Guidelines, Arbeiten für die Erste Bank sowie KI-Experimente für Markenwelten. Strategie und Konzept auf der einen Seite; Engrd strukturiert und übersetzt ins Digitale. Der Partner für Websites, Apps und UI/UX bis hin zu Interfaces für KI-Agenten.', href: 'https://engrd.at/', linkLabel: 'Website ↗' }
     ]

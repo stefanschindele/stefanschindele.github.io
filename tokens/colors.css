@@ -1,0 +1,55 @@
+:root {
+  /* Primaries */
+  --red: #FF3F13;            /* Test-Rot RGB 255 63 19 */
+  --red-dark: #D93107;       /* Hover / Press, eine Stufe dunkler */
+  --red-scarlet: #F5332C;    /* Vergleich: bisheriges STS-Scarlet */
+  --black: #000000;
+  --white: #FFFFFF;
+
+  /* Neutrals (S/W-Variante) */
+  --grey-100: #F2F2F0;
+  --grey-200: #E3E3E0;
+  --grey-400: #A6A6A2;
+  --grey-600: #6B6B67;
+  --grey-800: #2B2B29;
+
+  /* Semantic: Variante Rot (Standard) */
+  --surface: var(--red);
+  --surface-alt: var(--white);
+  --ink: var(--white);
+  --ink-on-alt: var(--black);
+  --rule: var(--white);
+  --accent: var(--white);   /* auf Rot: Akzent über Gewicht/Linie, nicht Farbe */
+
+  /* Funktional */
+  --success: #2F6B3A;
+  --error: #000000;
+}
+
+/* Variante Schwarz-Weiß */
+[data-variant="bw"] {
+  --surface: var(--white);
+  --surface-alt: var(--black);
+  --ink: var(--black);
+  --ink-on-alt: var(--white);
+  --rule: var(--black);
+  --accent: var(--black);
+}
+/* Variante Schwarz-Weiß mit Rot als Akzent (Linie, Punkt, Zahlen) */
+[data-variant="bw-red"] {
+  --surface: var(--white);
+  --surface-alt: var(--black);
+  --ink: var(--black);
+  --ink-on-alt: var(--white);
+  --rule: var(--black);
+  --accent: var(--red);
+}
+/* Variante Schwarz-Weiß invertiert */
+[data-variant="bw-inv"] {
+  --surface: var(--black);
+  --surface-alt: var(--white);
+  --ink: var(--white);
+  --ink-on-alt: var(--black);
+  --rule: var(--white);
+  --accent: var(--white);
+}

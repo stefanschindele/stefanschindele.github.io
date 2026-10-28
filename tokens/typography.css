@@ -1,0 +1,24 @@
+:root {
+  --font-sans: "Grosa", "Helvetica Neue", Arial, sans-serif;
+  --weight-light: 300;
+  --weight-regular: 400;
+
+  /* Alle Texte versal, gesperrt, linksbündig */
+  --case: uppercase;
+  --tracking-text: 0.06em;
+  --tracking-head: 0.08em;
+
+  /* Textblöcke in Größen (S → XXL) */
+  --text-xs: 11px;   /* Micro, Labels */
+  --text-s: 13px;    /* Caption */
+  --text-m: 16px;    /* Fließtext */
+  --text-l: 22px;    /* Lead */
+  --text-xl: clamp(28px, 3.4vw, 44px);   /* Headline */
+  --text-xxl: clamp(40px, 6vw, 88px);    /* Display */
+
+  --leading-tight: 1.1;
+  --leading-text: 1.45;
+  --leading-loose: 1.6;
+
+  --measure: 760px;
+}

@@ -13,6 +13,8 @@
   <style>
     html, body { margin: 0; padding: 0; background: #fff; }
     html { scroll-behavior: smooth; }
+    @media (max-width: 640px) { .bar-city { display: none !important; } }
+    @media (max-width: 360px) { .bar-contact { display: none !important; } }
     a { color: inherit; text-decoration: none; }
     a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
     input, textarea, button { font: inherit; letter-spacing: inherit; text-transform: inherit; }
@@ -20,17 +22,17 @@
     @media (prefers-reduced-motion: reduce) { * { transition: none !important; } html { scroll-behavior: auto; } }
   </style>
 </helmet>
-<div data-variant="{{ variantAttr }}" style="--red: {{ redTone }}; --text-hero: {{ sizeHero }}; --text-xxl: {{ sizeXxl }}; --text-l: {{ sizeL }}; --text-s: {{ sizeS }}; background: var(--surface); color: var(--ink); font-family: var(--font-sans); font-weight: 300; font-size: var(--text-s); line-height: var(--leading-text); letter-spacing: var(--tracking-text); text-transform: uppercase; text-align: left; min-height: 100vh; overflow-wrap: break-word; hyphens: auto; transition: background-color 400ms var(--ease), color 400ms var(--ease); overflow-x: hidden">
+<div data-variant="{{ variantAttr }}" style="--red: {{ redTone }}; --text-hero: {{ sizeHero }}; --text-xxl: {{ sizeXxl }}; --text-l: {{ sizeL }}; --text-s: {{ sizeS }}; background: var(--surface); color: var(--ink); font-family: var(--font-sans); font-weight: 300; font-size: var(--text-s); line-height: var(--leading-text); letter-spacing: var(--tracking-text); text-transform: uppercase; text-align: left; min-height: 100vh; overflow-wrap: break-word; hyphens: manual; transition: background-color 400ms var(--ease), color 400ms var(--ease); overflow-x: hidden">
 
   <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 20; background: var(--surface); color: var(--ink); transition: padding var(--dur-std) var(--ease)">
     <div style="max-width: var(--container); margin: 0 auto; padding: {{ barPad }} var(--margin-page); display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); font-size: var(--text-s); transition: padding var(--dur-std) var(--ease); border-bottom: 1px solid {{ barRule }}">
       <a href="#top" style="display: flex; align-items: center; gap: var(--space-2); font-weight: 400">
-        <span>Stefan Schindele</span>
-        <span style="display: inline-block; width: 6px; height: 6px; border-radius: 999px; background: var(--accent)"></span>
-        <span>{{ t.bar.city }}</span>
+        <span style="white-space: nowrap">Stefan Schindele</span>
+        <span class="bar-city" style="display: inline-block; width: 6px; height: 6px; border-radius: 999px; background: var(--accent)"></span>
+        <span class="bar-city">{{ t.bar.city }}</span>
       </a>
       <div style="display: flex; align-items: center; gap: var(--space-5)">
-        <a href="mailto:office@stefan-schindele.com">{{ t.bar.contact }}</a>
+        <a class="bar-contact" href="mailto:office@stefan-schindele.com" style="white-space: nowrap">{{ t.bar.contact }}</a>
         <div style="display: flex; gap: var(--space-2)">
           <button onClick="{{ setDE }}" aria-pressed="{{ isDE }}" style="background: none; border: 0; padding: 4px 0; color: inherit; cursor: pointer; font-weight: {{ deWeight }}; opacity: {{ deOpacity }}; border-bottom: 1px solid {{ deRule }}">DE</button>
           <span style="opacity: .55">/</span>
@@ -377,18 +379,31 @@ const EN = {
     lead: 'Brand and communication strategy: distillation, positioning, concept – and the direction of execution.',
     claim: 'Making visible what is already there.',
     body: 'No repositioning. A distillation and translation of the strategy that often already exists inside an organisation – just unspoken.',
-    philoA: 'Know the weaknesses.', philoB: 'Recognise the strengths.', philoC: 'Then build on them strategically.'
+    philoA: 'Know the weaknesses.', philoB: 'Recognise the strengths.', philoC: 'Then build on them strategically.',
+    proofs: [
+      'Analytical on the substance, creative on the way there. Distillation takes both: pulling things apart, and putting them back together unexpectedly.',
+      'Twenty years of practice in brand and communication – inside the corporation, across seven markets, down to execution.'
+    ]
   },
   formats: {
     label: 'Formats', title: 'my approach.', lead: 'The same work – different forms of access.', foot: 'Ways of working, not packages.',
     items: [
       { name: 'Strategy projects', sub: 'From analysis through to directing execution.', body: 'Clear task, clear result. Brand and communication strategy: positioning, concept, roadmap – and the direction of the disciplines until the result stands. Six to sixteen weeks, depending on the task. For transitions, also on-site for a time.' },
-      {},
+      { name: 'Sparring', sub: 'An ongoing partner for heads of communication.', body: 'Sparring means thinking at eye level. No slides, but questions. Conversations that are allowed to take detours, because that is often where the better answers are. Drawn from two decades of brand and communication work – and a background in making things, not in administering them.' },
       { name: 'Execution', sub: 'Concept and delivery from one hand – or with the network.', body: 'Smaller undertakings take shape directly: strategy, concept and design in one hand, accelerated by AI-supported processes. For mid-sized tasks – the brand of an architecture practice, say – that means positioning through to finished result, without friction. When it grows larger or more complex, the network carries the delivery.' }
     ]
   },
   so: {
     lead: 'An independent outside view, before budget and public exposure depend on it.',
+    introA: 'What do you think of this? That is how it usually starts. A concept, a script, a presentation, sometimes a whole strategy – pushed across the table before it goes any further.',
+    introB: 'The answer comes from someone who has done the work, not only assessed it. From both sides of the table: as client inside a corporation, as supplier in agency and consultancy.',
+    formsTitle: 'Three forms',
+    formsNote: 'In every form, one conversation and one document. And in none of them a new idea: what is assessed is what is on the table. Concept and strategy are not developed here – that keeps the frame small and the line to the strategy project clear.',
+    notTitle: 'When not',
+    notText: 'Not worthwhile if the decision has already been made and only needs backing. Whether the opinion gets used in the end is open. That it gets heard is not.',
+    occTitle: 'Typical occasions',
+    occText: 'A board that has an advertising concept reviewed before it goes into the budget. A financial institution that wants to see its agency\'s design concept from the outside. An agency that wants to test a concept before the client sees it.',
+    follow: 'Follow-up mandates are possible – and are then shown openly in the proposal. Never on the work that was reviewed.',
     forms: [
       { name: 'Quick check', text: 'A single piece of communication, a script, a concept. An afternoon\'s work, a conversation, a written assessment.' },
       { name: 'Analysis', text: 'Strategies, concept proposals, design systems. A few days of reading in come first – then a conversation and a document with analysis and recommendation.' },
@@ -396,18 +411,31 @@ const EN = {
     ]
   },
   vis: {
-    label: 'Proof',
+    label: 'Proof', title: 'visible.',
     lead: 'Strategy only counts once it becomes visible. Four places where it did.',
-    rows: [{ period: '2017 – 2022', proof: 'A1 Group · brand value from 0.9 to 2.2 bn € (Brand Finance)', role: 'Brand strategy and management, all markets' }]
+    rows: [{ period: '2017 – 2022', proof: 'A1 Group · brand value from 0.9 to 2.2 bn € (Brand Finance)', role: 'Brand strategy and management, all markets' },
+      { proof: 'A1 rebranding · one umbrella brand, seven countries', role: 'Austria as consultant at Saffron, then six countries as the lead responsible inside the group' },
+      { proof: '3/Drei Austria · market entry, brand from zero' },
+      { proof: 'A1 processes · quarterly report from three weeks to three hours, one post to fifteen', role: 'Concept, delivery with Frontira' }]
   },
   net: {
     label: 'Network', title: 'the execution.',
     intro: 'No apparatus – but no going it alone either. Execution is carried by partners with whom real projects have been built over years, in some cases decades. Hands-on practice in each of these fields: that is what makes the selection sound, the briefings precise and the quality judgement independent. Concept, selection and quality stay in one place.',
-    partners: [{}, { since: 'since 2009' }, { since: 'since 2015' }, { since: 'since 2017', text: 'Performance and aesthetics – two ambitions that rarely meet in digital. Joint projects since 2017, including the evolution of the A1 brand design with brand portal and guidelines, and work for Erste Bank. Strategy and concept on one side; Engrd structures and translates into digital – including AI experiments. The partner for websites, apps and UI/UX, up to interfaces for AI agents.' }]
+    partners: [
+      { since: 'since 1998', text: 'Conceptual design without detours: design built on one central idea and true to it. Joint work since 1998, from the design and advertising for ONE through Sembritzki Feinkost in Munich to mobile brands in Eastern Europe. The division of roles is established: advice and briefing on one side, conceptual ideas and excellent design on the other. The partner for projects that need a clear, consistent design idea that lasts.' },
+      { since: 'since 2009', text: 'Brand design at an international level. Five years as Client Service Director and Strategic Planner on the consultancy side, then collaboration as client – among others on the A1 rebranding: one umbrella brand for seven countries. The partner for brand identities that have to carry across markets and languages.' },
+      { since: 'since 2015', field: 'Business processes & AI', text: 'Processes that do not feel like technology. Automations take shape that actually land in the day-to-day of an organisation – at A1, for example, a quarterly report that takes three hours instead of three weeks, and one post becomes fifteen. Concept and requirements on one side; Frontira builds and runs. The partner for business processes and AI applications.' },
+       { since: 'since 2017', text: 'Performance and aesthetics – two ambitions that rarely meet in digital. Joint projects since 2017, including the evolution of the A1 brand design with brand portal and guidelines, and work for Erste Bank. Strategy and concept on one side; Engrd structures and translates into digital – including AI experiments. The partner for websites, apps and UI/UX, up to interfaces for AI agents.' }]
   },
   about: {
     label: 'About', role: 'Brand & communication strategist',
-    bridgeA: 'What remains is the depth of that work – without the apparatus that usually comes with it.', bridgeB: 'Corporate experience, directly accessible.'
+    bridgeA: 'What remains is the depth of that work – without the apparatus that usually comes with it.', bridgeB: 'Corporate experience, directly accessible.',
+    bio: [
+      'It began at Vogue and Marie Claire in Munich: graphic design trainee and internship at Condé Nast and Gruner & Jahr. Then the master class for graphic design and advertising under Walter Lürzer at the Academy of Applied Arts Vienna, graduating as Mag. art.',
+      'After that, two decades of brand strategy and brand systems for international organisations. At A1 Telekom Austria, brand leadership across seven markets; in Zagreb, running two countries and a team of 18. Before that the agency and consultancy side – Saffron, Demner Merlicek & Bergmann – and the market entry of 3/Drei, built from the ground up. Brands beyond telecommunications: OMV, Sony PlayStation, MasterCard, the City of Vienna.'
+    ],
+    stationsTitle: 'Career',
+    stations: [{}, { org: 'Vipnet (Croatia & North Macedonia)' }]
   },
   contact: {
     label: 'Get in touch', title: 'contact', lead: 'Vienna and Munich. And wherever I\'m needed. Available for projects across DACH and CEE.',
@@ -483,7 +511,7 @@ class Component extends DCLogic {
       heroLogoWidth: (this.props.heroLogo ?? 100) + '%',
       endLogoWidth: (this.props.schlussLogo ?? 'gross') === 'gross' ? '100%' : '180px',
       ...(((this.props.kontrast ?? 'stark') === 'stark')
-        ? { sizeHero: 'clamp(56px, 12vw, 220px)', sizeXxl: 'clamp(34px, 6.3vw, 105px)', sizeL: 'clamp(18px, 1.6vw, 24px)', sizeS: '12px' }
+        ? { sizeHero: 'clamp(38px, 12vw, 220px)', sizeXxl: 'clamp(34px, 6.3vw, 105px)', sizeL: 'clamp(18px, 1.6vw, 24px)', sizeS: '12px' }
         : { sizeHero: 'clamp(48px, 8vw, 120px)', sizeXxl: 'clamp(28px, 4.2vw, 62px)', sizeL: '22px', sizeS: '13px' }),
       barPad: compact ? '10px' : '22px',
       barRule: compact ? 'var(--rule)' : 'transparent',
